@@ -35,6 +35,9 @@ class PaymentUI extends React.Component {
                 <div>
                     <PaymentForm/>
                 </div>
+                <div >
+                     <a href="something" class="button5" >Thanh toán</a>
+                </div>
             </div>
         );
     }
