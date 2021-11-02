@@ -14,9 +14,9 @@ class Counter extends React.Component {
 
                 <Col>
                     <div style={{display: 'flex', justifyContent: 'flex-end'}}>
-                    <Button variant="success" onClick={this.props.handleIncrement}>
+                    <Button variant="danger" onClick={this.props.handleDecrement}>
                         <h4>
-                            <strong>+</strong>
+                            <strong>-</strong>
                         </h4>
                     </Button>
 
@@ -26,9 +26,9 @@ class Counter extends React.Component {
                         </h4>
                     </Badge>
 
-                    <Button variant="danger" onClick={this.props.handleDecrement}>
+                    <Button variant="success" onClick={this.props.handleIncrement}>
                         <h4>
-                            <strong>-</strong>
+                            <strong>+</strong>
                         </h4>
                     </Button>
                     </div>
