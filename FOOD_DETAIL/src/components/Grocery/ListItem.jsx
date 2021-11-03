@@ -2,55 +2,71 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css'
 import Item from "./Item"
 import Header from "./Header"
-import {ListGroup } from 'react-bootstrap'
+import {Button, ListGroup } from 'react-bootstrap'
 
 class ListItem extends React.Component {
-    state = {
-        
+    constructor(props) {
+        super(props); 
+        this.state = {  
+            foods: [],
+            count: 0
+        }
+        this.handleAdd = this.handleAdd.bind(this);
+        this.handleRemove = this.handleRemove.bind(this);
     }
 
-    food1 = {
-        showModal: false,
-        foodName: 'Pho',
-        price: '35,000',
-        quantity: 1,
-        sideDishs: [],
-        totalPrice: "35,000"
-    }
+    handleAdd() {
+        //Fake data:
+        const food = {
+            foodName: 'Phở bò',
+            price: '35,000',
+            quantity: 1,
+            sideDishes: ["Chén trứng", "Chén tái em bé"] ,
+            totalPrice: "35,000"
+        }
+        let foods;
+        if (this.state.count > 0) {
+            foods = this.state.foods.slice(0, this.state.count + 1);
+        }
+        else {
+            foods = []
+        }
+        const count = this.state.count;
+        this.setState({
+          foods: foods.concat([{
+            food: food
+          }]),
+          count: count + 1,
+        });
+      }
 
-    food2 = {
-        showModal: false,
-        foodName: 'Pho',
-        price: '35,000',
-        quantity: 1,
-        sideDishs: [],
-        totalPrice: "35,000"
-    }
+    handleRemove(id) {
+        console.log(id + " need be removed", this)
+        let foods = this.state.foods;
+        foods.splice(id, 1);        
+        this.setState({
+          foods: foods,
+          count: foods.length,
+        });
 
-
-    food3 = {
-        showModal: false,
-        foodName: 'Pho',
-        price: '35,000',
-        quantity: 1,
-        sideDishs: [],
-        totalPrice: "35,000"
     }
 
     render() { 
+        //Initialize data:
+        const foods = this.state.foods;
+        let itemRows;
+        if (foods.length > 0) {
+            itemRows = foods.map((item, index) =>
+                <Item key={index} id={index} food={item.food} handleRemove = {this.handleRemove}/>
+            );
+        }
+
         return (
             <div>
+                <Button onClick={this.handleAdd}>Thêm phở bò nha</Button>
                 <Header />
                 <ListGroup>
-                    <ListGroup.Item>
-                        <Item food={this.food1}/>
-                    </ListGroup.Item>
-                    <ListGroup.Item>
-                        <Item food={this.food2}/>
-                    </ListGroup.Item>
-                    <ListGroup.Item>
-                        <Item food={this.food3}/>
-                    </ListGroup.Item>
+                    {itemRows} 
                 </ListGroup>
                 {/* <Footer /> */}
             </div>

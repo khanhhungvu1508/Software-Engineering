@@ -1,6 +1,5 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css'
-import image from '../image/phoBo.jpg'
 import { Container, Col, Row, Image} from 'react-bootstrap';
 
 class Header extends React.Component {
@@ -8,40 +7,26 @@ class Header extends React.Component {
         return (
            
                 <Row>
-                <Col>
-                    <Image src={image} thumbnail />
-                </Col>
-                <Col>
-                    <Row>
-                        <h4>
-                            <strong>{this.props.food.foodName}</strong>
+                <Col xs={4}>
+                    <Row >
+                        <h4 >
+                            <strong>Shopping Cart</strong>
                         </h4>
                     </Row>
-                    <Row>
-                        <h4>
-                            <strong>Side dish</strong>
-                        </h4>
-                    </Row>
-                    
                 </Col>
-                <Col>
+                <Col xs={2}>
                     <h4>
-                        <strong>{this.props.food.price}</strong>
+                        <strong>Giá cả</strong>
                     </h4>
                 </Col>
-                <Col>
+                <Col xs={4}>
                     <h4>
-                        <strong>{this.props.food.quantity}</strong>
+                        <strong>Số lượng</strong>
                     </h4>
                 </Col>
-                <Col>
+                <Col xs={2}>
                     <h4>
-                        <strong>Remove</strong>
-                    </h4>
-                </Col>
-                <Col>
-                    <h4>
-                        <strong>{this.props.food.totalPrice}</strong>
+                        <strong>Tổng tiền</strong>
                     </h4>
                 </Col>
                 </Row>

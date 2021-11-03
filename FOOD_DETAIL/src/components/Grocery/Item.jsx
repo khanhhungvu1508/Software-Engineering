@@ -1,51 +1,66 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css'
-import image from '../image/phoBo.jpg'
-import { Container, Col, Row, Image} from 'react-bootstrap';
+import image from '../../image/phoBo.jpg'
+import {Button, Col, Row, Image, ListGroup} from 'react-bootstrap';
 
 class Item extends React.Component {
+    constructor(props) {
+        super(props);
+        this.id = this.props.id
+        //this.sideDishes = this.props.food.sideDishes 
+        this.handleRemove = this.handleClick.bind(this)
+    } 
+
+    handleClick() {
+        this.props.handleRemove(this.id);
+    }
+
     render() { 
+        // const listItems = this.sideDishes.map((sideDish) =>
+        //     <li key={sideDish}>
+        //         {sideDish}
+        //     </li>
+        // );
+
         return (
-            <div>
+            <ListGroup.Item  >
                 <Row>
-                <Col>
+                <Col >
                     <Image src={image} thumbnail />
                 </Col>
                 <Col>
                     <Row>
-                        <h4>
-                            <strong>{this.props.food.foodName}</strong>
+                        <h4 style={{display: 'flex', justifyContent: 'left'}}>
+                            {this.props.food.foodName}
                         </h4>
                     </Row>
                     <Row>
-                        <h4>
-                            <strong>Side dish</strong>
-                        </h4>
+                        {/* <ul>{listItems}</ul> */}
                     </Row>
                     
                 </Col>
                 <Col>
-                    <h4>
-                        <strong>{this.props.food.price}</strong>
+                    <h4 style={{display: 'flex', justifyContent: 'left'}}>
+                        {this.props.food.price}
                     </h4>
                 </Col>
                 <Col>
-                    <h4>
-                        <strong>{this.props.food.quantity}</strong>
+                    <h4 style={{display: 'flex', justifyContent: 'left'}}>
+                        {this.props.food.quantity}
                     </h4>
                 </Col>
                 <Col>
-                    <h4>
-                        <strong>Remove</strong>
-                    </h4>
-                </Col>
+                    <Button variant="primary" size="lg" onClick={this.handleRemove}>
+                    Xóa
+                    </Button>{' '}
+                </Col>  
                 <Col>
-                    <h4>
-                        <strong>{this.props.food.totalPrice}</strong>
+                    <h4 style={{display: 'flex', justifyContent: 'center'}}>
+                        {this.props.food.totalPrice}
                     </h4>
                 </Col>
                 </Row>
-            </div>
+            </ListGroup.Item>
             );
         }
     }
