@@ -25,6 +25,17 @@ class FoodDetail extends React.Component {
         orderMethod: 'Eat in'
     }
 
+    handleAddFood = () => {
+        const f = {
+            foodName: this.state.overview.foodName,
+            price: this.state.overview.price,
+            quantity: this.state.quantity,
+            sideDishes: ["Chén trứng", "Chén tái em bé"] ,
+            totalPrice: "35,000"
+        };
+        this.props.addFood(f);
+    }
+
     handleOpenModal = () => {
         this.setState({ showModal: true });
     }
@@ -100,10 +111,20 @@ class FoodDetail extends React.Component {
                     </Container>
                 </Modal.Body>
                 <Modal.Footer>
-                    <SelectButton
+                    {/* <SelectButton
                         image={buttonImage}
                         price={this.state.overview.price}
-                    />
+                    /> */}
+                    <Button variant="danger" size="lg" onClick={this.handleAddFood}>
+                <img
+                alt=""
+                src={buttonImage}
+                width="30"
+                height="30"
+                className="d-inline-block align-top"
+                />{' '}
+                {this.state.overview.price} VND
+            </Button>
                 </Modal.Footer>
             </Modal>
             </>
@@ -114,5 +135,3 @@ class FoodDetail extends React.Component {
 export default FoodDetail;
 
 //https://react-bootstrap.netlify.app/
-
-  

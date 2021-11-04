@@ -1,9 +1,9 @@
-import ListItem from "./components/Grocery/ListItem";
+import Chung from "./components/chung";
 
 function App() {
   return (
     <div>
-      <ListItem/>
+    <Chung/>
     </div>
   );
 }

@@ -8,36 +8,14 @@ class ListItem extends React.Component {
     constructor(props) {
         super(props); 
         this.state = {  
-            foods: [],
-            count: 0
+            foods: []
         }
-        this.handleAdd = this.handleAdd.bind(this);
+        // this.handleAdd = this.handleAdd.bind(this);
         this.handleRemove = this.handleRemove.bind(this);
     }
 
-    handleAdd() {
-        //Fake data:
-        const food = {
-            foodName: 'Phở bò',
-            price: '35,000',
-            quantity: 1,
-            sideDishes: ["Chén trứng", "Chén tái em bé"] ,
-            totalPrice: "35,000"
-        }
-        let foods;
-        if (this.state.count > 0) {
-            foods = this.state.foods.slice(0, this.state.count + 1);
-        }
-        else {
-            foods = []
-        }
-        const count = this.state.count;
-        this.setState({
-          foods: foods.concat([{
-            food: food
-          }]),
-          count: count + 1,
-        });
+    addFood(food) {
+        this.state.foods = this.state.foods.concat([{food: food}]);
       }
 
     handleRemove(id) {
@@ -46,13 +24,15 @@ class ListItem extends React.Component {
         foods.splice(id, 1);        
         this.setState({
           foods: foods,
-          count: foods.length,
         });
 
     }
 
     render() { 
         //Initialize data:
+        if (this.props.check()){
+            this.addFood(this.props.food);
+        }
         const foods = this.state.foods;
         let itemRows;
         if (foods.length > 0) {
@@ -63,7 +43,7 @@ class ListItem extends React.Component {
 
         return (
             <div>
-                <Button onClick={this.handleAdd}>Thêm phở bò nha</Button>
+                {/* <Button onClick={this.handleAdd}>Thêm phở bò nha</Button> */}
                 <Header />
                 <ListGroup>
                     {itemRows} 
