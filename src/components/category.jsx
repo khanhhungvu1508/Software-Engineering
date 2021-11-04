@@ -250,7 +250,7 @@ const cssstyle = `
     }
 
     .slick-list{
-        height: 150px;
+        height: 200px;
         padding-top: 20px;
     }
 
