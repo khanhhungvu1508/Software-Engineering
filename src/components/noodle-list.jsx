@@ -17,7 +17,7 @@ export default class Noodlelist extends Component {
         return (
             <div id="food-list">
                 <Grid container spacing={3} id="block-list">           
-                    <Grid item sm={3}>
+                    <Grid item sm={4}>
                         <Paper>
                             <div id="content-name-food">
                                 <Button id="btn-list-food">
@@ -39,7 +39,7 @@ export default class Noodlelist extends Component {
                         </Paper>
                     </Grid>
 
-                    <Grid item sm={3}>
+                    <Grid item sm={4}>
                         <Paper>
                             <div id="content-name-food">
                                 <Button id="btn-list-food">
@@ -61,7 +61,7 @@ export default class Noodlelist extends Component {
                         </Paper>
                     </Grid>
 
-                    <Grid item sm={3}>
+                    <Grid item sm={4}>
                         <Paper>
                             <div id="content-name-food">
                                 <Button id="btn-list-food">

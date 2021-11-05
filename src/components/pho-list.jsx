@@ -12,7 +12,7 @@ export default class Pholist extends Component {
         return (
             <div id="food-list">
                 <Grid container spacing={3} id="block-list">           
-                    <Grid item sm={3}>
+                    <Grid item sm={6}>
                         <Paper>
                             <div id="content-name-food">
                                 <Button id="btn-list-food" onClick = {() => this.props.modifiedState(true)}>
@@ -34,7 +34,7 @@ export default class Pholist extends Component {
                         </Paper>
                     </Grid>
 
-                    <Grid item sm={3}>
+                    <Grid item sm={6}>
                         <Paper>
                             <div id="content-name-food">
                                 <Button id="btn-list-food">

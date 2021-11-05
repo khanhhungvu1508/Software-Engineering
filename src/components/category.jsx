@@ -8,14 +8,7 @@ export default class Category extends Component {
     constructor() {
         super();
         this.state = {
-            name: "showAll",
-            showAll: true,
-            showRice: false,
-            showPho: false,
-            showNoodle: false,
-            showStickyrice:false,
-            showDessert: false,
-            showDrink: false
+            name: "showAll"
         };
         this.showComponent = this.showComponent.bind(this);
     }
@@ -23,85 +16,37 @@ export default class Category extends Component {
         switch (name) {
             case "showAll":
                 this.setState({
-                    name: "showAll",
-                    showAll: true,
-                    showRice: false,
-                    showPho: false,
-                    showNoodle: false,
-                    showStickyrice: false,
-                    showDessert: false,
-                    showDrink: false
+                    name: "showAll"
                 });
                 break;
             case "showRice":
                 this.setState({ 
-                    name: "showRice",
-                    showRice: true,
-                    showAll: false,
-                    showNoodle: false,
-                    showStickyrice: false,
-                    showDessert: false,
-                    showDrink: false
+                    name: "showRice"
                 });
                 break;
             case "showPho":
                 this.setState({
-                    name: "showPho",
-                    showPho: true,
-                    showAll: false,
-                    showRice: false,
-                    showNoodle: false,
-                    showStickyrice: false,
-                    showDessert: false,
-                    showDrink: false
+                    name: "showPho"
                 });
                 break;
             case "showNoodle":
                 this.setState({
-                    name: "showNoodle",
-                    showNoodle: true,
-                    showAll: false,
-                    showRice: false,
-                    showPho: false,
-                    showStickyrice: false,
-                    showDessert: false,
-                    showDrink: false
+                    name: "showNoodle"
                 });
                 break;
             case "showStickyrice":
                 this.setState({
-                    name: "showStickyrice",
-                    showStickyrice: true,
-                    showAll: false,
-                    showRice: false,
-                    showPho: false,
-                    showNoodle: false,
-                    showDessert: false,
-                    showDrink: false
+                    name: "showStickyrice"
                 });
                 break;
             case "showDessert":
                 this.setState({
-                    name: "showDessert",
-                    showDessert: true,
-                    showAll: false,
-                    showRice: false,
-                    showPho: false,
-                    showNoodle: false,
-                    showStickyrice: false,
-                    showDrink: false,
+                    name: "showDessert"
                 });
                 break;
             case "showDrink":
                 this.setState({
-                    name: "showDrink",
-                    showDrink: true,
-                    showAll: false,
-                    showRice: false,
-                    showPho: false,
-                    showNoodle: false,
-                    showStickyrice: false,
-                    showDessert: false
+                    name: "showDrink"
                 });
                 break;
             default:
@@ -150,6 +95,18 @@ export default class Category extends Component {
                         infinite: true,
                         speed: 500,
                         slidesToShow: 2,
+                        slidesToScroll: 1,
+                        autoplay: true, 
+                        autoplayspeed: 3000
+                    }
+                },
+                {
+                    breakpoint: 750,
+                    settings: {
+                        dots: true,
+                        infinite: true,
+                        speed: 500,
+                        slidesToShow: 1,
                         slidesToScroll: 1,
                         autoplay: true, 
                         autoplayspeed: 3000
@@ -212,13 +169,6 @@ export default class Category extends Component {
                 </div>
 
                 <div>
-                    {/*{showAll && <Allfood />}
-                    {showRice && <Ricelist />}
-                    {showPho && <ShowDetailController name={this.state.name}/>}
-                    {showNoodle && <Noodlelist />}
-                    {showStickyrice && <Stickyricelist />}
-                    {showDessert && <Dessertlist />}
-                    {showDrink && <Drinklist />}*/}
                     <ShowDetailController name={this.state.name}/>
                 </div>
             </div>
@@ -263,4 +213,4 @@ const cssstyle = `
             width: 80%;
         }
     }
-`
+`;
