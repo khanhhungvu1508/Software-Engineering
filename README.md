@@ -6,12 +6,11 @@
 In the project directory, you can install some library such as:
 
 ```
+npm install react-bootstrap bootstrap@5.1.3
 npm install react-slick
-npm install @mui/material/Button
-npm install @material-ui/core/Paper
-npm install @material-ui/core/Grid
-npm install @mui/material/Button
+npm install @mui/material
 npm install react-icons --save
-npm i --save @fortawesome/free-brands-svg-icons
+npm i --save @fortawesome/fontawesome-svg-core
+npm install --save @fortawesome/free-solid-svg-icons
 npm install --save @fortawesome/react-fontawesome
 ```
