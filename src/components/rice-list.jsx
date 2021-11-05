@@ -10,26 +10,61 @@ export default class Ricelist extends Component {
     constructor() {
         super();
         this.state = {
-            width: 0
+            mounted: false,
+            big: true,
+            medium: false,
+            small: false
         };
         window.addEventListener("resize", this.update);
     }
-    
     componentDidMount() {
+        this.setState({
+            mounted: true
+        });
         this.update();
+    }
+
+    componentWillUnmount() {
+        this.setState({
+            mounted: false
+        });
+        window.removeEventListener("resize", this.update);
     }
     
     update = () => {
-        this.setState({
-            width: window.innerWidth
-        });
+        if (this.state.mounted)
+        {
+            if (window.innerWidth >= 1200)
+            {
+                this.setState({
+                    big: true,
+                    medium: false,
+                    small: false
+                });
+            }
+            else if (window.innerWidth >= 550 && window.innerWidth < 1200)
+            {
+                this.setState({
+                    big: false,
+                    medium: true,
+                    small: false
+                });
+            }
+            else
+            {
+                this.setState({
+                    big: false,
+                    medium: false,
+                    small: true
+                });
+            }
+        }      
     };
 
     render() {
-        const widthScreen = this.state.width;
         return (
             <div id="food-list">
-            { widthScreen >= 1200 && 
+            { this.state.big && 
                 <Grid container spacing={3} id="block-list">           
                     <Grid item xs={3}>
                         <Paper>
@@ -121,7 +156,7 @@ export default class Ricelist extends Component {
                 </Grid>
             }
 
-            { widthScreen >= 550 && widthScreen < 1200 &&
+            { this.state.medium &&
                 <div>
                     <Grid container spacing={3} id="block-list">           
                         <Grid item xs={6}>
@@ -217,7 +252,7 @@ export default class Ricelist extends Component {
                 </div>
             }
 
-            { widthScreen < 550 &&
+            { this.state.small &&
                 <div>
                     <Grid container spacing={3} id="block-list">           
                         <Grid item xs={12}>

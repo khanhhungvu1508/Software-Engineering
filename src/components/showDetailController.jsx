@@ -18,7 +18,6 @@ export default class ShowDetailController extends Component {
     }
 
     modifiedState = (val) => {
-        console.log(this.props.name);
         this.setState({
             setModal: val
         })

@@ -77,7 +77,7 @@ export default class Category extends Component {
                     }
                 },
                 {
-                    breakpoint: 1000,
+                    breakpoint: 1050,
                     settings: {
                         dots: true,
                         infinite: true,
@@ -89,7 +89,7 @@ export default class Category extends Component {
                     }
                 },
                 {
-                    breakpoint: 850,
+                    breakpoint: 950,
                     settings: {
                         dots: true,
                         infinite: true,
@@ -101,7 +101,7 @@ export default class Category extends Component {
                     }
                 },
                 {
-                    breakpoint: 750,
+                    breakpoint: 700,
                     settings: {
                         dots: true,
                         infinite: true,
@@ -116,7 +116,7 @@ export default class Category extends Component {
         };
         return (
             <div>
-                <div className="container">
+                <div className="navbar-list">
                     <link rel="stylesheet" type="text/css" charset="UTF-8" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" />
                     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" />
                     <style>{cssstyle}</style>
@@ -178,7 +178,7 @@ export default class Category extends Component {
   
 
 const cssstyle = `
-    .container {
+    .navbar-list {
         margin: 0 auto;
         padding: 0px 40px 40px 40px;
         width: 90%;
@@ -204,6 +204,7 @@ const cssstyle = `
     .slick-list{
         height: 200px;
         padding-top: 20px;
+        padding-left: 1%;
     }
 
     @media only screen and (max-width : 1000px) {
@@ -211,6 +212,28 @@ const cssstyle = `
             margin: 0 auto;
             padding: 0px 40px 40px 40px;
             width: 80%;
+        }
+    }
+
+    @media only screen and (max-width : 950px) {
+        .slick-list{
+            height: 200px;
+            padding-top: 20px;
+            padding-left: 5%;
+        }
+    }
+
+    @media only screen and (max-width : 700px) {
+        .container {
+            margin: 0 auto;
+            padding: 0px 40px 40px 40px;
+            width: 60%;
+        }
+
+        .slick-list{
+            height: 200px;
+            padding-top: 20px;
+            padding-left: 18%;
         }
     }
 `;
