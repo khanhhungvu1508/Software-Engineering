@@ -9,7 +9,7 @@ import OrderMethod from './orderMethod';
 import SideDishes from './sideDishes';
 import SelectButton from './selectButton';
 import 'bootstrap/dist/css/bootstrap.css'
-import { Modal, Button, Row, Col, Container, Image} from 'react-bootstrap';
+import { Modal, Row, Col, Container, Image} from 'react-bootstrap';
 
 
 class FoodDetail extends React.Component {
@@ -24,10 +24,14 @@ class FoodDetail extends React.Component {
         des: 'Pho is a type of Vietnamese soup that usually consists of bone broth, rice noodles, spices, and thinly sliced meat (usually beef). Though “pho” technically refers to the noodles and not the soup itself, most people consider the dish a singular unit. A popular street food in Vietnam, pho gained popularity around the world after refugees introduced it to other cultures after the Vietnam War.',
         orderMethod: 'Eat in'
     }
-      
+
+    handleOpenModal = () => {
+        this.setState({ showModal: true });
+        this.props.modifiedStateTrue();
+    }
+
     handleCloseModal = () => {
-        this.setState({ showModal: false });
-        console.log(this.state)
+        this.props.modifiedState(false)
     }
 
     handleIncrement = () => {

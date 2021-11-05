@@ -2,18 +2,13 @@ import React, { Component } from 'react';
 import Slider from 'react-slick';
 import "./style.css";
 import Button from "@mui/material/Button";
-import Allfood from './food-list';
-import Pholist from './pho-list';
-import Ricelist from './rice-list';
-import Noodlelist from './noodle-list';
-import Stickyricelist from './stickyrice-list';
-import Dessertlist from './dessert-list';
-import Drinklist from './drink-list';
+import ShowDetailController from './showDetailController';
 
 export default class Category extends Component {
     constructor() {
         super();
         this.state = {
+            name: "showAll",
             showAll: true,
             showRice: false,
             showPho: false,
@@ -28,6 +23,7 @@ export default class Category extends Component {
         switch (name) {
             case "showAll":
                 this.setState({
+                    name: "showAll",
                     showAll: true,
                     showRice: false,
                     showPho: false,
@@ -39,6 +35,7 @@ export default class Category extends Component {
                 break;
             case "showRice":
                 this.setState({ 
+                    name: "showRice",
                     showRice: true,
                     showAll: false,
                     showNoodle: false,
@@ -49,6 +46,7 @@ export default class Category extends Component {
                 break;
             case "showPho":
                 this.setState({
+                    name: "showPho",
                     showPho: true,
                     showAll: false,
                     showRice: false,
@@ -60,6 +58,7 @@ export default class Category extends Component {
                 break;
             case "showNoodle":
                 this.setState({
+                    name: "showNoodle",
                     showNoodle: true,
                     showAll: false,
                     showRice: false,
@@ -71,6 +70,7 @@ export default class Category extends Component {
                 break;
             case "showStickyrice":
                 this.setState({
+                    name: "showStickyrice",
                     showStickyrice: true,
                     showAll: false,
                     showRice: false,
@@ -82,6 +82,7 @@ export default class Category extends Component {
                 break;
             case "showDessert":
                 this.setState({
+                    name: "showDessert",
                     showDessert: true,
                     showAll: false,
                     showRice: false,
@@ -93,6 +94,7 @@ export default class Category extends Component {
                 break;
             case "showDrink":
                 this.setState({
+                    name: "showDrink",
                     showDrink: true,
                     showAll: false,
                     showRice: false,
@@ -108,7 +110,6 @@ export default class Category extends Component {
     }
   
     render() {
-        const { showAll, showRice, showPho, showNoodle, showStickyrice, showDessert, showDrink} = this.state;
         const settings = {
             dots: true,
             infinite: true,
@@ -211,13 +212,14 @@ export default class Category extends Component {
                 </div>
 
                 <div>
-                    {showAll && <Allfood />}
+                    {/*{showAll && <Allfood />}
                     {showRice && <Ricelist />}
-                    {showPho && <Pholist />}
+                    {showPho && <ShowDetailController name={this.state.name}/>}
                     {showNoodle && <Noodlelist />}
                     {showStickyrice && <Stickyricelist />}
                     {showDessert && <Dessertlist />}
-                    {showDrink && <Drinklist />}
+                    {showDrink && <Drinklist />}*/}
+                    <ShowDetailController name={this.state.name}/>
                 </div>
             </div>
         );
