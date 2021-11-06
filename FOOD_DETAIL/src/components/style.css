@@ -1,0 +1,102 @@
+#menu-screen {
+    display: flex;
+}
+
+#home-symbol {
+    min-width: 3rem;
+    height: 3rem;
+    margin-left: 3%;
+    border-radius: 1em;
+    background-color:blue;
+    color: white;
+}
+
+#content-back {
+    font-size: 1.25em;
+    margin-left: 1%;
+}
+
+#header {
+    display: flex;
+    background-color: red;
+    width: 100%;
+    height: 4em;
+    align-items: center;
+}
+
+#food-list {
+    width: 100%;
+    padding-top: 20px;
+    background: rgb(250, 251, 253);
+}
+
+#block-list {
+    max-width: 95%;
+    padding-left: 5%;
+    max-height: 1000px;
+    min-height: 250px;
+}
+
+.MuiPaper-rounded {
+    border-radius: 4px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#content-name-food {
+    display: flex;
+    flex-direction: inherit;
+    height: inherit;
+}
+
+#btn-list-food {
+    display: contents;
+}
+
+#img-list-food-button {
+    display: flex;
+    width: 100%;
+    height: 60%;
+    object-fit: cover;
+}
+
+#space-box{
+    height: 5%;
+}
+
+#underline-box{
+    height: 1%;
+    background: rgb(250, 251, 253);
+}
+
+#name-food {
+    text-align: center;
+    min-height: calc(19% - 2rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#price-buy-food {
+    text-align: center;
+}
+
+#buy-button {
+    background: red;
+    font-size: 1.5rem;
+    padding: 0px 0px;
+    min-width: 2rem;
+    height: 2rem;
+    margin-left: 10%;
+}
+
+#column1{
+    width: 70%;
+}
+
+#column2 {
+    background: green;
+    width: 30%;
+    margin-bottom: -12px;
+}
