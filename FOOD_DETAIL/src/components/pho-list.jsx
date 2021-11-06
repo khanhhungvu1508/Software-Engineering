@@ -8,6 +8,9 @@ import { FiShoppingCart } from "react-icons/fi";
 import FoodDetail from "./foodDetail";
 
 export default class Pholist extends Component {
+    setFoodClick(link, name, price){
+        this.props.setFood(link, name, price)
+    }
     render() {
         return (
             <div id="food-list">
@@ -15,7 +18,7 @@ export default class Pholist extends Component {
                     <Grid item sm={6}>
                         <Paper>
                             <div id="content-name-food">
-                                <Button id="btn-list-food" onClick = {() => this.props.modifiedState(true)}>
+                                <Button id="btn-list-food" onClick = {() => this.setFoodClick("https://image-us.eva.vn/upload/2-2019/images/2019-06-28/1561709538-885-thumbnail_schema_article.jpg", "Phở bò", "35.000")}>
                                     <img id="img-list-food-button" alt="" src="https://image-us.eva.vn/upload/2-2019/images/2019-06-28/1561709538-885-thumbnail_schema_article.jpg"/>
                                 </Button>
                                 <div id="space-box"></div>
@@ -25,7 +28,7 @@ export default class Pholist extends Component {
                                 <div id="space-box"></div>
                                 <div id="price-buy-food">
                                     35.000 VND
-                                    <Button id="buy-button" onClick = {() => this.props.modifiedState(true)}>
+                                    <Button id="buy-button" onClick = {() => this.setFoodClick("https://image-us.eva.vn/upload/2-2019/images/2019-06-28/1561709538-885-thumbnail_schema_article.jpg", "Phở bò", "35.000")}>
                                         <FiShoppingCart />
                                     </Button>
                                 </div>
@@ -37,7 +40,7 @@ export default class Pholist extends Component {
                     <Grid item sm={6}>
                         <Paper>
                             <div id="content-name-food">
-                                <Button id="btn-list-food">
+                                <Button id="btn-list-food" onClick = {() => this.setFoodClick("https://image-us.eva.vn/upload/4-2020/images/2020-12-11/image3-1607656518-418-width512height272.png", "Phở gà", "35.000")}>
                                     <img id="img-list-food-button" alt="" src="https://image-us.eva.vn/upload/4-2020/images/2020-12-11/image3-1607656518-418-width512height272.png"/>
                                 </Button>
                                 <div id="space-box"></div>
@@ -57,9 +60,9 @@ export default class Pholist extends Component {
                     </Grid>
                 </Grid>
 
-                <div>
-                    {this.props.setModal && <FoodDetail modifiedState={this.props.modifiedState} />}
-                </div>
+                {/* <div>
+                    {this.props.setModal && <FoodDetail modifiedState={this.props.modifiedState}  />}
+                </div> */}
             </div>
         );
     }

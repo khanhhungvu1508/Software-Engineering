@@ -11,7 +11,14 @@ export default class Category extends Component {
             name: "showAll"
         };
         this.showComponent = this.showComponent.bind(this);
+        this.setFood = this.setFood.bind(this);
+
     }
+
+    setFood(link, name, price){
+        this.props.setFood(link, name, price);
+    }
+
     showComponent(name) {
         switch (name) {
             case "showAll":
@@ -169,7 +176,7 @@ export default class Category extends Component {
                 </div>
 
                 <div>
-                    <ShowDetailController name={this.state.name}/>
+                    <ShowDetailController name={this.state.name} setFood={this.setFood}/>
                 </div>
             </div>
         );

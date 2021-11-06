@@ -9,7 +9,7 @@ import OrderMethod from './orderMethod';
 import SideDishes from './sideDishes';
 import SelectButton from './selectButton';
 import 'bootstrap/dist/css/bootstrap.css'
-import { Modal, Row, Col, Container, Image} from 'react-bootstrap';
+import { Modal, Row, Col, Container, Image, Button} from 'react-bootstrap';
 
 
 class FoodDetail extends React.Component {
@@ -17,21 +17,20 @@ class FoodDetail extends React.Component {
         showModal: true,
         overview: {
             SKU: 401,
-            foodName: 'Pho',
-            price: '35,000'
+            foodName: this.props.name,
+            price: this.props.price,
         },
         quantity: 1,
         des: 'Pho is a type of Vietnamese soup that usually consists of bone broth, rice noodles, spices, and thinly sliced meat (usually beef). Though “pho” technically refers to the noodles and not the soup itself, most people consider the dish a singular unit. A popular street food in Vietnam, pho gained popularity around the world after refugees introduced it to other cultures after the Vietnam War.',
         orderMethod: 'Eat in'
     }
 
-    handleOpenModal = () => {
-        this.setState({ showModal: true });
-        this.props.modifiedStateTrue();
+    //Add to grocery
+    handleAddFood = () => {
+        this.props.addClick(this.state.quantity);
     }
-
     handleCloseModal = () => {
-        this.props.modifiedState(false)
+        this.props.closeModal();
     }
 
     handleIncrement = () => {
@@ -71,7 +70,7 @@ class FoodDetail extends React.Component {
                         <Container>
                         <Row>
                             <Col xs={4}>
-                                <Image src={image} thumbnail />
+                                <Image src={this.props.img} thumbnail />
                             </Col>
 
                             <Col>
@@ -96,10 +95,20 @@ class FoodDetail extends React.Component {
                         </Container>
                     </Modal.Body>
                     <Modal.Footer>
-                        <SelectButton
+                        {/* <SelectButton
                             image={buttonImage}
                             price={this.state.overview.price}
-                        />
+                        /> */}
+                         <Button variant="danger" size="lg" onClick={this.handleAddFood}>
+                <img
+                alt=""
+                src={buttonImage}
+                width="30"
+                height="30"
+                className="d-inline-block align-top"
+                />{' '}
+                {this.state.overview.price} VND
+            </Button>
                     </Modal.Footer>
                 </Modal>
             </div>

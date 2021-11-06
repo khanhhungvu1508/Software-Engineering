@@ -8,58 +8,38 @@ import Stickyricelist from './stickyrice-list';
 import Dessertlist from './dessert-list';
 import Drinklist from './drink-list';
 
+import FoodDetail from "./foodDetail";
+import ListItem from "./Grocery/ListItem";
+
 export default class ShowDetailController extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            setModal: false
-        };
-        this.modifiedState = this.modifiedState.bind(this);
+        this.setFood = this.setFood.bind(this);
     }
 
-    modifiedState = (val) => {
-        this.setState({
-            setModal: val
-        })
+    //setFood methods
+    setFood(link, name, price){
+        this.props.setFood(link, name, price);
     }
 
     render() {
         return (
             <div>
-                {this.props.name === "showAll" && <Allfood
-                    setModal={this.state.setModal}
-                    modifiedState={this.modifiedState}>
-                </Allfood>}
 
-                {this.props.name === "showRice" && <Ricelist
-                    setModal={this.state.setModal}
-                    modifiedState={this.modifiedState}>
-                </Ricelist>}
+                {this.props.name === "showAll" && <Allfood setFood={this.setFood}/>}
 
-                {this.props.name === "showPho" && <Pholist
-                    setModal={this.state.setModal}
-                    modifiedState={this.modifiedState}>
-                </Pholist>}
+                {this.props.name === "showRice" && <Ricelist setFood={this.setFood}/>}
 
-                {this.props.name === "showNoodle" && <Noodlelist
-                    setModal={this.state.setModal}
-                    modifiedState={this.modifiedState}>
-                </Noodlelist>}
+                {this.props.name === "showPho" && <Pholist setFood={this.setFood}/>}
 
-                {this.props.name === "showStickyrice" && <Stickyricelist
-                    setModal={this.state.setModal}
-                    modifiedState={this.modifiedState}>
-                </Stickyricelist>}
+                {this.props.name === "showNoodle" && <Noodlelist setFood={this.setFood}/>}
 
-                {this.props.name === "showDessert" && <Dessertlist
-                    setModal={this.state.setModal}
-                    modifiedState={this.modifiedState}>
-                </Dessertlist>}
+                {this.props.name === "showStickyrice" && <Stickyricelist setFood={this.setFood}/>}
 
-                {this.props.name === "showDrink" && <Drinklist
-                    setModal={this.state.setModal}
-                    modifiedState={this.modifiedState}>
-                </Drinklist>}
+                {this.props.name === "showDessert" && <Dessertlist setFood={this.setFood}/>}
+
+                {this.props.name === "showDrink" && <Drinklist setFood={this.setFood}/>}
+         
             </div>
         );
     }
