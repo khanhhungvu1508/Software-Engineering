@@ -1,21 +1,25 @@
 import React from 'react';
-import 'bootstrap/dist/css/bootstrap.css'
-import Item from "./Item"
-import Header from "./Header"
-import {Button, ListGroup } from 'react-bootstrap'
+import 'bootstrap/dist/css/bootstrap.css';
+import Item from "./Item";
+import Header from "./Header";
+import { ListGroup } from 'react-bootstrap';
+
+import cloneDeep from 'lodash/cloneDeep';
 
 class ListItem extends React.Component {
-    foods;
     constructor(props) {
         super(props); 
-        this.foods = [];
+        this.state= {
+            foods: []
+        }
+        
         // this.handleAdd = this.handleAdd.bind(this);
         this.handleRemove = this.handleRemove.bind(this);
     }
 
     addFood(food) {
-        let f = this.foods.slice();
-        this.foods = f.concat([{food:food}]);
+        const f = cloneDeep(food);
+        this.state.foods = this.state.foods.concat([{food: f}]);
       }
 
     handleRemove(id) {
@@ -32,7 +36,7 @@ class ListItem extends React.Component {
         if (this.props.isNeedToAdd()){
             this.addFood(this.props.food);
         }
-        const foods = this.foods;
+        const foods = this.state.foods;
         let itemRows;
         if (foods.length > 0) {
             itemRows = foods.map((item, index) =>

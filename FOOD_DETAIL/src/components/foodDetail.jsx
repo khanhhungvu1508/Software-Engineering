@@ -27,7 +27,7 @@ class FoodDetail extends React.Component {
 
     //Add to grocery
     handleAddFood = () => {
-        this.props.addClick(this.state.quantity);
+        this.props.addFood(this.state.quantity);
     }
     handleCloseModal = () => {
         this.props.closeModal();

@@ -1,6 +1,5 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css'
-import image from '../../image/phoBo.jpg'
 import {Button, Col, Row, Image, ListGroup} from 'react-bootstrap';
 
 class Item extends React.Component {
@@ -26,12 +25,12 @@ class Item extends React.Component {
             <ListGroup.Item  >
                 <Row>
                 <Col >
-                    <Image src={image} thumbnail />
+                    <Image src={this.props.food.link} thumbnail />
                 </Col>
                 <Col>
                     <Row>
                         <h4 style={{display: 'flex', justifyContent: 'left'}}>
-                            {this.props.food.foodName}
+                            {this.props.food.name}
                         </h4>
                     </Row>
                     <Row>

@@ -5,25 +5,26 @@ import Category from './category'
 import React from 'react';
 
 class Chung extends React.Component{
-	food = {
-		link: null,
-		name: null,
-		price: null,
-		quantity: null,
-		totalPrice: "35,000"
-	}
+	food;
 	constructor(props) {
         super(props); 
         this.state = {
 			setModal: false,
 			needToAdd: false
 		}
+		this.food = {
+			link: null,
+			name: null,
+			price: null,
+			quantity: null,
+			totalPrice: "35,000"
+		}
 		//control modal
 		this.closeModal = this.closeModal.bind(this);
         this.setFood = this.setFood.bind(this);
 
 		//control grocery
-		this.addClick = this.addClick.bind(this);
+		this.addFood = this.addFood.bind(this);
 		this.isNeedToAdd = this.isNeedToAdd.bind(this);
     }
 
@@ -40,7 +41,7 @@ class Chung extends React.Component{
 	}
 
 	//control food
-	addClick(quantity){
+	addFood(quantity){
 		this.food.quantity = quantity;
 		this.setState({needToAdd: true});
 	}
@@ -57,6 +58,8 @@ class Chung extends React.Component{
 	render(){
 		return (
 			<div>
+		{this.state.setModal && <FoodDetail name={this.food.name} img={this.food.link} price={this.food.price} closeModal={this.closeModal} addFood={this.addFood}/>}
+
 	<div id="menu-screen">
       <div id="column1">
         <Header />
@@ -67,8 +70,6 @@ class Chung extends React.Component{
         <ListItem isNeedToAdd={this.isNeedToAdd} food={this.food} />
       </div>
     </div>
-
-	{this.state.setModal && <FoodDetail name={this.food.name} img={this.food.link} price={this.food.price} closeModal={this.closeModal} addClick={this.addClick}/>}
 	</div>
 		)
 	}
