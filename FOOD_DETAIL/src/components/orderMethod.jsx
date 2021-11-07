@@ -12,12 +12,12 @@ class OrderMethod extends React.Component {
             <div>
                 <Navbar bg="light">
                     <h4 style={{display: 'flex', justifyContent: 'flex-start'}}>
-                        <strong>Order method</strong>
+                        <strong>Phương thức đặt hàng</strong>
                     </h4>
                 </Navbar>
                 <Form.Select size="lg" value={this.props.value} onChange={this.props.handleChange}>
-                    <option value='Eat in'>Eat in</option>
-                    <option value='Take away'>Take away</option>
+                    <option value='Eat in'>Ăn tại chỗ</option>
+                    <option value='Take away'>Mang về</option>
                 </Form.Select>
                 <br />
             </div>

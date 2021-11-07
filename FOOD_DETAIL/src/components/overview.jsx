@@ -14,12 +14,12 @@ class Overview extends React.Component {
                 </Col>
                 <Col xs={4}>
                     <h4 style={{display: 'flex', justifyContent: 'center'}}>
-                        <strong>NAME</strong>
+                        <strong>Tên</strong>
                     </h4>
                 </Col>
                 <Col>
                     <h4 style={{display: 'flex', justifyContent: 'flex-end'}}>
-                        <strong>UNIT PRICE</strong>
+                        <strong>Giá tiền</strong>
                     </h4>
                 </Col>
             </Row>

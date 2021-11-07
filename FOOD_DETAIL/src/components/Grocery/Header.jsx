@@ -1,6 +1,6 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css'
-import { Container, Col, Row, Image} from 'react-bootstrap';
+import { Col, Row } from 'react-bootstrap';
 
 class Header extends React.Component {
     render() { 
@@ -10,7 +10,7 @@ class Header extends React.Component {
                 <Col xs={4}>
                     <Row >
                         <h4 >
-                            <strong>Shopping Cart</strong>
+                            <strong>Giỏ hàng</strong>
                         </h4>
                     </Row>
                 </Col>
