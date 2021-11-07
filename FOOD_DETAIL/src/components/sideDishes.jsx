@@ -8,11 +8,11 @@ class SideDishes extends React.Component {
             <div>
                 <Navbar bg="light">
                     <h4 style={{display: 'flex', justifyContent: 'flex-start'}}>
-                        <strong>Side dishes</strong>
+                        <strong>Món ăn kèm</strong>
                     </h4>
                 </Navbar>
-                <Form.Check type="checkbox" id="autoSizingCheck2" label="Crullers" />
-                <Form.Check type="checkbox" id="autoSizingCheck2" label="Poached eggs" />
+                <Form.Check type="checkbox" id="autoSizingCheck2" label="Cá viên chiên" />
+                <Form.Check type="checkbox" id="autoSizingCheck2" label="Trứng rán" />
             </div>
         );
     }

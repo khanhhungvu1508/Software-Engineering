@@ -10,7 +10,8 @@ class Chung extends React.Component{
         super(props); 
         this.state = {
 			setModal: false,
-			needToAdd: false
+			needToAdd: false,
+			payment: false
 		}
 		this.food = {
 			link: null,

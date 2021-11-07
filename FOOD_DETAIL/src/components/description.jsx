@@ -8,7 +8,7 @@ class Descritption extends React.Component {
             <Accordion defaultActiveKey="1">
             <Accordion.Item eventKey="0">
                 <Accordion.Header>
-                    <h4><strong>Description</strong></h4>
+                    <h4><strong>Mô tả</strong></h4>
                 </Accordion.Header>
                 <Accordion.Body>
                     {this.props.des}

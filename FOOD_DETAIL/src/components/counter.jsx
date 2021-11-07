@@ -8,7 +8,7 @@ class Counter extends React.Component {
             <Container>
                 <Col sx={9}>
                     <h4 style={{display: 'flex', justifyContent: 'flex-start'}}>
-                        <strong>Quantity</strong>
+                        <strong>SỐ lượng</strong>
                     </h4>
                 </Col>
 
