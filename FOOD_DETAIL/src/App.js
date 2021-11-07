@@ -1,8 +1,9 @@
-import Chung from './components/chung';
+import Chung2 from "./components/chung2";
+
 function App() {
   return (    
     <div>
-      <Chung/>
+      <Chung2 />
     </div>
   );
 }

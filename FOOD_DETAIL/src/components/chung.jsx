@@ -3,6 +3,7 @@ import FoodDetail from "./foodDetail";
 import Header from './header'
 import Category from './category'
 import React from 'react';
+// import './style.css';
 
 class Chung extends React.Component{
 	food;
@@ -10,15 +11,14 @@ class Chung extends React.Component{
         super(props); 
         this.state = {
 			setModal: false,
-			needToAdd: false,
-			payment: false
+			needToAdd: false
 		}
 		this.food = {
 			link: null,
 			name: null,
 			price: null,
 			quantity: null,
-			totalPrice: "35,000"
+			totalPrice: null
 		}
 		//control modal
 		this.closeModal = this.closeModal.bind(this);
@@ -37,13 +37,14 @@ class Chung extends React.Component{
 		this.setState({setModal: true});
 	}
 
-	closeModal(){
+	closeModal (){
 		this.setState({setModal: false});
 	}
 
 	//control food
 	addFood(quantity){
 		this.food.quantity = quantity;
+		this.food.totalPrice = this.food.price * quantity;
 		this.setState({needToAdd: true});
 	}
 	
@@ -54,25 +55,31 @@ class Chung extends React.Component{
 		}
 		return false;
 	}
+
+	//control payment
+	goToPay = () => {
+		this.props.goToPay();
+	}
 	
 
 	render(){
 		return (
-			<div>
-		{this.state.setModal && <FoodDetail name={this.food.name} img={this.food.link} price={this.food.price} closeModal={this.closeModal} addFood={this.addFood}/>}
+			<>
+				{this.state.setModal && <FoodDetail name={this.food.name} img={this.food.link} price={this.food.price} closeModal={this.closeModal} addFood={this.addFood}/>}
 
-	<div id="menu-screen">
-      <div id="column1">
-        <Header />
-        <Category setFood={this.setFood}/>
-      </div>
+				<div id="menu-screen">
+      				<div id="column1">
+        				<Header />
+        				<Category setFood={this.setFood}/>
+      				</div>
 
-      <div id="column2" style={{backgroundColor: 'white'}}>
-        <ListItem isNeedToAdd={this.isNeedToAdd} food={this.food} />
-      </div>
-    </div>
-	</div>
+      				<div id="column2" style={{backgroundColor: 'white'}}>
+        				<ListItem isNeedToAdd={this.isNeedToAdd} food={this.food} goToPay={this.goToPay}/>
+      				</div>
+    			</div>
+			</>
 		)
+		
 	}
 };
 

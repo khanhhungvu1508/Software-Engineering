@@ -1,5 +1,4 @@
 import React from 'react';
-import image from '../image/phoBo.jpg'
 import buttonImage from '../image/addToCart.png'
 
 import Overview from './overview'
@@ -26,7 +25,7 @@ class FoodDetail extends React.Component {
     }
 
     //Add to grocery
-    handleAddFood = () => {
+    addFood = () => {
         this.props.addFood(this.state.quantity);
     }
     handleCloseModal = () => {
@@ -95,20 +94,11 @@ class FoodDetail extends React.Component {
                         </Container>
                     </Modal.Body>
                     <Modal.Footer>
-                        {/* <SelectButton
+                        <SelectButton
                             image={buttonImage}
-                            price={this.state.overview.price}
-                        /> */}
-                         <Button variant="danger" size="lg" onClick={this.handleAddFood}>
-                <img
-                alt=""
-                src={buttonImage}
-                width="30"
-                height="30"
-                className="d-inline-block align-top"
-                />{' '}
-                {this.state.overview.price} VND
-            </Button>
+                            price={this.state.overview.price * this.state.quantity}
+                            addFood={this.addFood}
+                        />
                     </Modal.Footer>
                 </Modal>
             </div>

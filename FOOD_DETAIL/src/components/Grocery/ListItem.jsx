@@ -2,9 +2,11 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import Item from "./Item";
 import Header from "./Header";
+import Footer from './Footer';
 import { ListGroup } from 'react-bootstrap';
 
 import cloneDeep from 'lodash/cloneDeep';
+import { StickyContainer, Sticky } from 'react-sticky';
 
 class ListItem extends React.Component {
     constructor(props) {
@@ -31,6 +33,10 @@ class ListItem extends React.Component {
 
     }
 
+    goToPay = () => {
+        this.props.goToPay();
+    }
+
     render() { 
         //Initialize data:
         if (this.props.isNeedToAdd()){
@@ -42,19 +48,24 @@ class ListItem extends React.Component {
             itemRows = foods.map((item, index) =>
                 <Item key={index} id={index} food={item.food} handleRemove = {this.handleRemove}/>
             );
-        }
+        };
+
+        const total = foods.reduce((t,v) => t = t + v.food.totalPrice, 0);
 
         return (
             <div>
-                {/* <Button onClick={this.handleAdd}>Thêm phở bò nha</Button> */}
-                <Header />
+             
+                    <Header />
+
                 <ListGroup>
                     {itemRows} 
                 </ListGroup>
-                {/* <Footer /> */}
+                <div style={{position: 'fixed', bottom: 30}}>
+                    <Footer goToPay={this.goToPay} total={total}/>
+                </div>
             </div>
         );
     }
 }
  
-export default ListItem
+export default ListItem;

@@ -2,6 +2,8 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css'
 import { Container, Col, Row } from 'react-bootstrap';
 
+import DisplayPrice from './displayPrice';
+
 class Overview extends React.Component {
     render() { 
         return (
@@ -36,7 +38,7 @@ class Overview extends React.Component {
                 </Col>
                 <Col>
                     <h4 style={{display: 'flex', justifyContent: 'flex-end', color: 'red'}}>
-                        {this.props.overview.price} VND
+                        <DisplayPrice price={this.props.overview.price}/>
                     </h4>
                 </Col>
             </Row>

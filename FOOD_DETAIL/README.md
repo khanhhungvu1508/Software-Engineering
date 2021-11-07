@@ -13,4 +13,6 @@ npm i --save @fortawesome/fontawesome-svg-core
 npm install --save @fortawesome/free-solid-svg-icons
 npm install --save @fortawesome/react-fontawesome
 npm i --save lodash
+npm install react-number-format --save
+npm install react-sticky --save
 ```

@@ -1,6 +1,7 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css'
 import {Button, Col, Row, Image, ListGroup} from 'react-bootstrap';
+import DisplayPrice from '../displayPrice';
 
 class Item extends React.Component {
     constructor(props) {
@@ -29,9 +30,9 @@ class Item extends React.Component {
                 </Col>
                 <Col>
                     <Row>
-                        <h4 style={{display: 'flex', justifyContent: 'left'}}>
+                        <h5 style={{display: 'flex', justifyContent: 'left'}}>
                             {this.props.food.name}
-                        </h4>
+                        </h5>
                     </Row>
                     <Row>
                         {/* <ul>{listItems}</ul> */}
@@ -39,14 +40,14 @@ class Item extends React.Component {
                     
                 </Col>
                 <Col>
-                    <h4 style={{display: 'flex', justifyContent: 'left'}}>
-                        {this.props.food.price}
-                    </h4>
+                    <p style={{display: 'flex', justifyContent: 'left'}}>
+                        <DisplayPrice price={this.props.food.price}/>
+                    </p>
                 </Col>
                 <Col>
-                    <h4 style={{display: 'flex', justifyContent: 'left'}}>
+                    <p style={{display: 'flex', justifyContent: 'left'}}>
                         {this.props.food.quantity}
-                    </h4>
+                    </p>
                 </Col>
                 <Col>
                     <Button variant="primary" size="lg" onClick={this.handleRemove}>
@@ -54,9 +55,9 @@ class Item extends React.Component {
                     </Button>{' '}
                 </Col>  
                 <Col>
-                    <h4 style={{display: 'flex', justifyContent: 'center'}}>
-                        {this.props.food.totalPrice}
-                    </h4>
+                    <p style={{display: 'flex', justifyContent: 'center'}}>
+                    <DisplayPrice price={this.props.food.totalPrice}/>
+                    </p>
                 </Col>
                 </Row>
             </ListGroup.Item>

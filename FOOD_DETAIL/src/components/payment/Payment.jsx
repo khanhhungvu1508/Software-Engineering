@@ -1,5 +1,5 @@
-import React from 'react'
-import './Payment.css';
+// import './Payment.css';
+import React from 'react';
 
 class Field extends React.Component {
     render() {
@@ -10,7 +10,7 @@ class Field extends React.Component {
             </div>
         )
     }
-}
+};
 
 class PaymentForm extends React.Component {
     render(){
@@ -23,7 +23,7 @@ class PaymentForm extends React.Component {
             </div>
         );
     }
-}
+};
 
 class PaymentUI extends React.Component {
     render() {
@@ -41,6 +41,6 @@ class PaymentUI extends React.Component {
             </div>
         );
     }
-}
+};
 
 export default PaymentUI;
