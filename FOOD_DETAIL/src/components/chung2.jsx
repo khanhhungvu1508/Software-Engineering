@@ -1,6 +1,6 @@
 import React from 'react';
 import Chung from './chung';
-import PaymentUI from './payment/Payment'
+import PaymentUI from './Payment/Payment'
 
 class Chung2 extends React.Component{
 	state = {
@@ -12,10 +12,10 @@ class Chung2 extends React.Component{
 	}
 
 	render() {
-		console.log(this.state.payment);
-		if  (this.state.payment){
-			return <PaymentUI/>
-		}
+		// console.log(this.state.payment);
+		// if  (this.state.payment){
+		// 	return <PaymentUI/>
+		// }
 		return <Chung goToPay={this.goToPay}/>
 	}
 }

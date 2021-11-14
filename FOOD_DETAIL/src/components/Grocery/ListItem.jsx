@@ -6,7 +6,6 @@ import Footer from './Footer';
 import { ListGroup } from 'react-bootstrap';
 
 import cloneDeep from 'lodash/cloneDeep';
-import { StickyContainer, Sticky } from 'react-sticky';
 
 class ListItem extends React.Component {
     constructor(props) {

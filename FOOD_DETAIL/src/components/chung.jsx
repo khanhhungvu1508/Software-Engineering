@@ -1,54 +1,44 @@
 import ListItem from "./Grocery/ListItem";
 import FoodDetail from "./foodDetail";
-import Header from './header'
+import Header from './ScreenContent/header';
 import Category from './category'
 import React from 'react';
 // import './style.css';
 
 class Chung extends React.Component{
-	food;
-	constructor(props) {
-        super(props); 
-        this.state = {
-			setModal: false,
-			needToAdd: false
-		}
-		this.food = {
-			link: null,
-			name: null,
-			price: null,
-			quantity: null,
-			totalPrice: null
-		}
-		//control modal
-		this.closeModal = this.closeModal.bind(this);
-        this.setFood = this.setFood.bind(this);
-
-		//control grocery
-		this.addFood = this.addFood.bind(this);
-		this.isNeedToAdd = this.isNeedToAdd.bind(this);
-    }
+    state = {
+		setModal: false,
+		needToAdd: false
+	}
+	
+	food = {
+		link: null,
+		name: null,
+		price: null,
+		quantity: null,
+		totalPrice: null
+	}
 
 	// control modal
-	setFood(link, name, price){
+	setFood = (link, name, price) => {
 		this.food.link = link;
 		this.food.name = name;
 		this.food.price = price;
 		this.setState({setModal: true});
 	}
 
-	closeModal (){
+	closeModal = () => {
 		this.setState({setModal: false});
 	}
 
 	//control food
-	addFood(quantity){
+	addFood = (quantity) => {
 		this.food.quantity = quantity;
 		this.food.totalPrice = this.food.price * quantity;
 		this.setState({needToAdd: true});
 	}
 	
-	isNeedToAdd(){
+	isNeedToAdd = () => {
 		if(this.state.needToAdd){
 			this.state.needToAdd = false;
 			return true;

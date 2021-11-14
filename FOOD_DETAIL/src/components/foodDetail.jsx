@@ -1,14 +1,14 @@
 import React from 'react';
 import buttonImage from '../image/addToCart.png'
 
-import Overview from './overview'
-import Counter from './counter';
-import Descritption from './description';
-import OrderMethod from './orderMethod';
-import SideDishes from './sideDishes';
-import SelectButton from './selectButton';
+import Overview from './FoodDetail/overview'
+import Counter from './FoodDetail/counter';
+import Descritption from './FoodDetail/description';
+import OrderMethod from './FoodDetail/orderMethod';
+import SideDishes from './FoodDetail/sideDishes';
+import SelectButton from './FoodDetail/selectButton';
 import 'bootstrap/dist/css/bootstrap.css'
-import { Modal, Row, Col, Container, Image, Button} from 'react-bootstrap';
+import { Modal, Row, Col, Container, Image} from 'react-bootstrap';
 
 
 class FoodDetail extends React.Component {
@@ -107,5 +107,3 @@ class FoodDetail extends React.Component {
 }
  
 export default FoodDetail;
-
-//https://react-bootstrap.netlify.app/
