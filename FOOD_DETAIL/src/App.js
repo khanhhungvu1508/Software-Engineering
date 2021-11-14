@@ -1,9 +1,9 @@
-import Chung2 from "./components/chung2";
+import Controller from "./oldComponents/controller";
 
 function App() {
   return (    
     <div>
-      <Chung2 />
+      <Controller />
     </div>
   );
 }
