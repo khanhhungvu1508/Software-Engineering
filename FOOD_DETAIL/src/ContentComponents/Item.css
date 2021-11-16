@@ -1,0 +1,35 @@
+.content_item_body {
+    margin: 10px
+}
+
+.content_h4 {
+    font-weight: 600;
+    margin-bottom: 0px;
+    border-bottom: 1px dotted #a6a6a6;
+    line-height: 20px;
+    background: #fff;
+    padding: 3px 0;
+}
+
+.content_item_name {
+    font-family: "Lato", sans-serif;
+    font-weight: 600;
+    font: bold;
+    line-height: 20px;
+    color: #23292c;
+}
+
+.content_item_description {
+    font-family: "Zilla Slab", serif;
+    font-size: 16px;
+    color: #777777;
+    font-weight: 400;
+    line-height: 26px;
+}
+
+.content_item_price {
+    font: bold;
+    font-family: "Lato", sans-serif;
+    float: right;
+    color: #ea462b;
+}

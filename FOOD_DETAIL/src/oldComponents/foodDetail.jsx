@@ -12,17 +12,21 @@ import { Modal, Row, Col, Container, Image} from 'react-bootstrap';
 
 
 class FoodDetail extends React.Component {
-    state = {
-        showModal: true,
-        overview: {
-            SKU: 401,
-            foodName: this.props.name,
-            price: this.props.price,
-        },
-        quantity: 1,
-        des: 'Pho is a type of Vietnamese soup that usually consists of bone broth, rice noodles, spices, and thinly sliced meat (usually beef). Though “pho” technically refers to the noodles and not the soup itself, most people consider the dish a singular unit. A popular street food in Vietnam, pho gained popularity around the world after refugees introduced it to other cultures after the Vietnam War.',
-        orderMethod: 'Eat in'
+    constructor(props) {
+        super(props);
+        this.state = {
+            showModal: true,
+            overview: {
+                SKU: 401,
+                foodName: this.props.name,
+                price: this.props.price,
+            },
+            quantity: 1,
+            des: 'Pho is a type of Vietnamese soup that usually consists of bone broth, rice noodles, spices, and thinly sliced meat (usually beef). Though “pho” technically refers to the noodles and not the soup itself, most people consider the dish a singular unit. A popular street food in Vietnam, pho gained popularity around the world after refugees introduced it to other cultures after the Vietnam War.',
+            orderMethod: 'Eat in'
+        }
     }
+    
 
     //Add to grocery
     addFood = () => {
@@ -62,14 +66,14 @@ class FoodDetail extends React.Component {
                         closeButton
                         bsPrefix = 'modal-header bg-light text-dark'
                     >
-                        <Modal.Title>ADD TO CART</Modal.Title>
+                        <Modal.Title>Thông tin món ăn</Modal.Title>
                     </Modal.Header>
 
                     <Modal.Body>
                         <Container>
                         <Row>
                             <Col xs={4}>
-                                <Image src={this.props.img} thumbnail />
+                                <Image src={this.props.src} thumbnail />
                             </Col>
 
                             <Col>

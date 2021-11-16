@@ -69,7 +69,6 @@ class Chung extends React.Component{
     			</div>
 			</>
 		)
-		
 	}
 };
 

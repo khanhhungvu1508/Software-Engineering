@@ -1,0 +1,44 @@
+
+.content_body {
+  padding: 80px 30px;
+  font-family: "Zilla Slab", serif;
+}
+
+
+.content_background_container {
+  position: relative;
+  height: 200px;
+  width: 100%;
+  background: url("http://nunforest.com/koad-demo/upload/menu/pizza-ban.jpg") center center no-repeat;
+  background-size: cover;
+  border: 2px solid;
+  resize: both;
+  border:1px solid;
+}
+
+
+
+.content_background_content {
+  position: absolute;
+  padding:10px;
+  top: 30%;
+  bottom: 30%;
+  width: 100%;
+  background-color: transparent;
+  color: black;
+  font-size: x-large;
+  text-align: center;
+}
+
+@media only screen and (max-width: 512px) {
+    .content_background_content {
+      font-size: large;
+    }
+  }
+
+@media only screen and (max-width: 374px) { /*125%*/
+    .content_background_container {
+      height: 150px;
+      display: none;
+    }
+}
