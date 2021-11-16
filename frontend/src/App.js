@@ -1,9 +1,10 @@
-import Controller from "./oldComponents/controller";
+import Demo from "./oldComponents/demo";
+
 
 function App() {
   return (    
     <div>
-      <Controller />
+      <Demo />
     </div>
   );
 }
