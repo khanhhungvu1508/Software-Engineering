@@ -144,6 +144,10 @@ footer .sci li a:hover {
   color: #999;
 }
 
+.f-body .f-container ul {
+  padding-left: 0px;
+}
+
 @media (max-width: 990px) {
   footer {
     padding: 40px;

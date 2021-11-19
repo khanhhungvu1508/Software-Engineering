@@ -4,7 +4,7 @@ import { Modal, Button } from 'react-bootstrap';
 
 import cloneDeep from 'lodash/cloneDeep';
 
-import './cart.css'
+import '../Cart/cart.css'
 
 import { faPlus, faMinus, faTrashAlt, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -162,7 +162,7 @@ class Cart extends React.Component {
                     </Modal.Body>
                     <Modal.Footer>
                     <div class="total-price">
-                <table>
+                {/* <table>
                     <tr>
                         <td>Subtotal</td>
                         <td><strong><DisplayPrice price={total}/></strong></td>
@@ -183,7 +183,7 @@ class Cart extends React.Component {
                             >Thanh toán</Button>
                         </td>
                     </tr>
-                </table>
+                </table> */}
             </div>
                     </Modal.Footer>
                 </Modal>
