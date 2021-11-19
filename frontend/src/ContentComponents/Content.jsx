@@ -22,20 +22,28 @@ class Content extends React.Component {
             quantity: null,
             totalPrice: null
         }
+        this.addFood = this.addFood.bind(this);
+    }
+
+    addFood = (quantity) => {
+        /*Add food showing in modal to cart */
+        let food = this.food;
+        food.quantity = quantity;
+        this.props.addFood(food);
     }
 
     closeModal = () => {
+        // control modal
 		this.setState({setModal: false});
 	}
 
-    // control modal
+    
 	openModal = (src, name, price) => {
+        // control modal
         if (this.state.setModal) {
             /*Don't open modal if Modal is open*/
             return;
         }
-        console.log("name: "+ name);
-        console.log("price: " + price);
 		this.food.src = src;
 		this.food.name = name;
 		this.food.price = price;
@@ -49,12 +57,11 @@ class Content extends React.Component {
                 {/* Food Detail */}
                 {
                     this.state.setModal && 
-                    <FoodDetail name={this.food.name} 
-                                src={this.food.src} 
-                                price={this.food.price} 
+                    <FoodDetail food={this.food} 
                                 closeModal={this.closeModal} 
                                 sideDishes={this.props.sideDishes}
                                 window={this.props.window}
+                                addFood={this.addFood}
                                 />
                 }
                 {/* foods: Food list past from parent */}

@@ -253,9 +253,15 @@ class Controller extends React.Component {
             sideDishList: [],                       //All side dishes all category
         }
         this.changeCategory = this.changeCategory.bind(this);
-    
+        this.addFood = this.addFood.bind(this);
         //add dimensions listener for window resizing
         window.addEventListener('resize', this.getWindowDimensions); 
+    }
+
+    addFood = (food) => {
+        //Foods: src, name, price, quantity, total price
+        console.log(food);
+        
     }
 
     
@@ -264,7 +270,6 @@ class Controller extends React.Component {
         window.removeEventListener('resize', this.getWindowDimensions); 
     }
     
-    //actually set the state to the window dimensions
     getWindowDimensions = () => {
         this.setState({ window: { width: window.innerWidth, height: window.innerHeight} });
     }
@@ -293,7 +298,6 @@ class Controller extends React.Component {
             /*Don't render the same category */
             return;
         }
-        console.log("Food change");
         const mainFoods = this.state.mainFoodList.filter(food => food.category === category);
         const sideDishes = this.state.sideDishList.filter(
                         sideDish => sideDish.category.split(",").includes(category));
@@ -319,6 +323,7 @@ class Controller extends React.Component {
     }
 
     refreshList = () => {
+        /*Request both mainfoods and side dishes */
         axios
           .get("https://pure-retreat-31306.herokuapp.com/api/mainFoods/")
           .then((res) => this.initialFoods(res.data))
@@ -337,12 +342,17 @@ class Controller extends React.Component {
                 {/* Category */}
 
                 {/* Content */}
-                <Content foods={this.state.foods} sideDishes={this.state.sideDishes} category={this.state.category} window={this.state.window}/>
+                <Content 
+                    foods={this.state.foods} 
+                    sideDishes={this.state.sideDishes} 
+                    category={this.state.category} 
+                    window={this.state.window}
+                    addFood={this.addFood}
+                />
                 {/* Footer */}
                 <Button variant="primary" size="lg" onClick={this.changeCategory}>
                     Testing button
                 </Button>{' '}
-
             </div>
         );
     }

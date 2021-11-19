@@ -12,13 +12,10 @@ class FoodDetail extends React.Component {
         this.state = {
             showModal: true,
             overview: {
-                SKU: 401,
-                foodName: this.props.name,
-                price: this.props.price,
+                foodName: this.props.food.name,
+                price: this.props.food.price,
             },
             quantity: 1,
-            des: 'Pho is a type of Vietnamese soup that usually consists of bone broth, rice noodles, spices, and thinly sliced meat (usually beef). Though “pho” technically refers to the noodles and not the soup itself, most people consider the dish a singular unit. A popular street food in Vietnam, pho gained popularity around the world after refugees introduced it to other cultures after the Vietnam War.',
-            orderMethod: 'Eat in'
         }
 
         this.handleIncrement = this.handleIncrement.bind(this);
@@ -44,7 +41,7 @@ class FoodDetail extends React.Component {
 
     getFoodDetailBodyMobile() {
         return <div>
-                        <Image src={this.props.src} thumbnail />
+                        <Image src={this.props.food.src} thumbnail />
                         <Overview  overview={this.state.overview}/>
                         <SideDishes sideDishes={this.props.sideDishes}/>
                 </div>
@@ -53,7 +50,7 @@ class FoodDetail extends React.Component {
     getFoodDetailBodyDesktop() {
         return <Row>
                     <Col xs={4}>
-                        <Image src={this.props.src} thumbnail />
+                        <Image src={this.props.food.src} thumbnail />
                     </Col>
 
                     <Col>
@@ -120,7 +117,7 @@ class FoodDetail extends React.Component {
                         <Col><Button
                                 variant="secondary"
                                 price={this.state.overview.price * this.state.quantity}
-                                addFood={this.addFood}>
+                                onClick={this.addFood}>
                                 CHỌN
                             </Button></Col>
                     </Row>
