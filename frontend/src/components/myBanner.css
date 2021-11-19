@@ -1,0 +1,23 @@
+.page-banner-section {
+  padding: 50px 0 75px;
+  background: #111 url("http://nunforest.com/koad-demo/upload/banners/page-ban.jpg") center center no-repeat;
+  background-size: cover;
+  margin-top: 60px;
+}
+.page-banner-section h1 {
+  font-size: 50px;
+  color: #ffffff;
+  margin-bottom: 0px;
+  font-family: "Zilla Slab", serif;
+  font-weight: 600;
+  margin-left: 10px;
+}
+.page-banner-section span {
+  font-size: 22px;
+  font-family: "Zilla Slab", serif;
+  font-weight: 400;
+  margin-bottom: 0;
+  color: #999999; 
+  margin-left: 10px;
+}
+
