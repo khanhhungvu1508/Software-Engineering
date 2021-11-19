@@ -19,8 +19,7 @@ class Content extends React.Component {
             src: null,
             name: null,
             price: null,
-            quantity: null,
-            totalPrice: null
+            quantity: null
         }
         this.addFood = this.addFood.bind(this);
     }

@@ -1,6 +1,6 @@
 import React from 'react';
 import NumberFormat from 'react-number-format';
-import "./FoodDetail.css"
+import "./FoodDetail/FoodDetail.css"
 
 class DisplayPrice extends React.Component {
 	render() {

@@ -1,0 +1,164 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.f-body {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  min-height: 100vh;
+  flex-direction: column;
+  background: #ede7f6;
+  font-family: "Poppins", sans-serif;
+}
+
+footer {
+  position: relative;
+  width: 100%;
+  height: auto;
+  padding: 50px 100px;
+  background: #111;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+footer .f-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  flex-direction: row;
+}
+
+footer .f-container .sec {
+  margin-right: 30px;
+}
+
+footer .f-container .sec.footer-left {
+  width: 40%;
+}
+
+footer .f-container h2 {
+  position: relative;
+  color: #fff;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+footer .f-container h2:before {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 50px;
+  height: 2px;
+  background: #f00;
+}
+
+footer p {
+  color: #999;
+}
+
+footer .sci {
+  margin-top: 20px;
+  display: flex;
+}
+
+footer .sci li {
+  list-style: none;
+}
+
+footer .sci li a {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background: #222;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+  text-decoration: none;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 20px;
+}
+
+footer .sci li a:hover {
+  background: #f00;
+}
+
+.footer-mid {
+  position: relative;
+  width: 25%;
+}
+
+.footer-mid ul li {
+  list-style: none;
+}
+
+.footer-mid ul li a {
+  color: #999;
+  text-decoration: none;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+.footer-mid ul li a:hover {
+  color: #fff;
+}
+
+.footer-right {
+  width: 35% - 60px;
+  margin-right: 0;
+}
+
+.footer-right .info {
+  position: relative;
+}
+
+.footer-right .info li {
+  display: flex;
+  margin-bottom: 16px;
+}
+
+.footer-right .info li span {
+  color: #fff;
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+.footer-right .info li a {
+  color: #999;
+  text-decoration: none;
+}
+
+.copyrightText {
+  width: 100%;
+  background: #181818;
+  padding: 8px 100px;
+  text-align: center;
+  color: #999;
+}
+
+@media (max-width: 990px) {
+  footer {
+    padding: 40px;
+  }
+  footer .f-container {
+    flex-direction: column;
+  }
+  footer .f-container .sec {
+    margin-right: 0px;
+    margin-bottom: 40px;
+  }
+  footer .f-container .sec.footer-left {
+    width: 100%;
+  }
+  footer .f-container .footer-mid {
+    width: 100%;
+  }
+}

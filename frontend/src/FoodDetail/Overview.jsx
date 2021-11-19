@@ -2,7 +2,7 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css'
 import { Col, Row } from 'react-bootstrap';
 
-import DisplayPrice from './DisplayPrice';
+import DisplayPrice from '../DisplayPrice';
 
 class Overview extends React.Component {
     render() { 

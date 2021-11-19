@@ -2,7 +2,7 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css'
 import "../../ContentComponents/Item.css"
 import {Col, Row, Form,} from 'react-bootstrap'
-import DisplayPrice from '../DisplayPrice'
+import DisplayPrice from '../../DisplayPrice'
 
 class SideDishItem extends React.Component {
     render() { 

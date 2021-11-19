@@ -2,7 +2,7 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css'
 import "./Item.css"
 import {Col, Row, Image, ListGroup} from 'react-bootstrap';
-import DisplayPrice from "../FoodDetail/DisplayPrice"
+import DisplayPrice from "../DisplayPrice"
 
 class Item extends React.Component {
     constructor(props) {
