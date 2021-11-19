@@ -1,5 +1,5 @@
-import Controller from "./oldComponents/controller";
-// import LoginPage from "./LoginRegisterComponent/LoginPage";
+import Controller from "./Controller";
+import LoginRegisterPage from "./LoginRegisterComponent/LoginRegisterPage";
 
 function App() {
   return (    

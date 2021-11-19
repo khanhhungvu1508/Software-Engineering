@@ -2,15 +2,16 @@
 
 
 /*Login form*/
-.login-form {
+.payment-form {
     width: 100%;
     max-width: 330px;
     padding: 15px;
     margin: auto;
-    color: aliceblue;
+    color: black;
+    height: 500px;
     margin-top: 100px;
 }
-.login-register-button {
+.payment-button {
     width: 100%;
     margin-top: 5px;
     margin-bottom: 5px;

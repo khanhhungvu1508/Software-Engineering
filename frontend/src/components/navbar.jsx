@@ -13,7 +13,27 @@ const category = {
 }
 
 class MyNavbar extends React.Component {
+    getAccountNavBarItem() {
+      if (this.props.account === null) {
+        return (
+            <Nav.Link  
+              style={{margin: "0 25px" }} 
+              onClick = {() => this.props.selectPage("login-register")}>
+              Login
+            </Nav.Link>);
+      }
+      return (
+          <Nav.Link 
+            style={{margin: "0 25px" }} 
+            onClick = {() => this.props.selectPage("account")}>
+            Account
+          </Nav.Link>
+        );
+
+    }
+
     render(){
+        let loginNavBar = this.getAccountNavBarItem();
         return(
           <>
           <Navbar bg="light" expand="lg" fixed="top">
@@ -55,6 +75,7 @@ class MyNavbar extends React.Component {
                   <Nav.Link href="#action7" style={{margin: "0 25px" }} onClick = {() => this.props.selectPage("contact")}>
                     Contact
                   </Nav.Link>
+                  {loginNavBar}
                 </Nav>
               <Form className="d-flex">
                 <FormControl

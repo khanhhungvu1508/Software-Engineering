@@ -19,9 +19,32 @@ class Cart extends React.Component {
         }
     }
 
+    goToPay() {
+        if (this.state.foods.length == 0) {
+            alert("Ban chưa chọn thức ăn nào vào giỏ hàng.")
+            return;
+        }
+        let Product = "";
+        for (let i = 0; i < this.state.foods.length; ++i) {
+            Product = Product 
+                        + this.state.foods[i].food.name + ","  
+                        + this.state.foods[i].food.price + ","
+                        + this.state.foods[i].food.quantity+";"
+        }
+        this.props.goToPay(
+            Product,
+            this.getTotal(this.state.foods)
+        );
+    }
+
+    getTotal(foods) {
+        return foods.reduce((t,v) => t = t + v.food.price*v.food.quantity, 0);
+    }
+
     addFood(food) {
         const f = cloneDeep(food);
-        this.state.foods = this.state.foods.concat([{food: f}]);
+        this.state.foods = this.state.foods.concat({food: f});
+        console.log(this.state.foods);
       }
 
     handleRemove(id) {
@@ -58,10 +81,6 @@ class Cart extends React.Component {
     handleCloseModal = () => {
         this.setState({modal: false});
     }
-
-    // goToPay = () => {
-    //     this.props.goToPay();
-    // }
 
     render() { 
         console.log(this.props.food);
@@ -102,7 +121,7 @@ class Cart extends React.Component {
             );
         };
 
-        const total = this.state.foods.reduce((t,v) => t = t + v.food.price*v.food.quantity, 0);
+        const total = this.getTotal(this.state.foods);
 
         return (
             <div class="cart">
@@ -154,7 +173,12 @@ class Cart extends React.Component {
                         <td><strong><DisplayPrice price={total*1.1}/></strong></td>
                     </tr>
                     <tr>
-                        <td colSpan={"2"}><Button style={{width: "100%"}}>Thanh toán</Button></td>
+                        <td colSpan={"2"}>
+                            <Button 
+                                style={{width: "100%"}}
+                                onClick={() => this.goToPay(this.state.foods)}
+                            >Thanh toán</Button>
+                        </td>
                     </tr>
                 </table>
             </div>

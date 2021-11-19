@@ -1,15 +1,15 @@
 import React from 'react';
-import Content from '../ContentComponents/Content';
-import {Button} from 'react-bootstrap';
+import Content from './ContentComponents/Content';
 import axios from "axios";
 
-import Category from '../components/category';
-import MyNavbar from '../components/navbar';
-import Banner from '../components/Banner';
-import Homepage from '../components/Homepage';
-import Cart from '../Cart/cart';
-import Footer from '../Footer/footer';
-import { ThemeProvider } from 'react-bootstrap';
+import Category from './components/category';
+import MyNavbar from './components/navbar';
+import Banner from './components/Banner';
+import Homepage from './components/Homepage';
+import Cart from './Cart/cart';
+import Footer from './Footer/footer';
+import Payment from './Payment/Payment'
+import LoginRegisterPage from './LoginRegisterComponent/LoginRegisterPage';
 
 
 const category = {
@@ -23,8 +23,6 @@ const category = {
 
 /*Hard code food, this's one category*/
 
-let id = 0;
-
 class Controller extends React.Component {
     constructor(props) {
         super(props);
@@ -34,27 +32,44 @@ class Controller extends React.Component {
                 width: window.innerWidth,
                 height: window.innerHeight
             },
-            food: null,
-            needToAdd: false,
+            
+            page: "home",                           //Use for change page
             // Navbar
 
             // Category
 
             // Content
-            category: category.trangmieng,
+            category: category.trangmieng,          
             foods: [],                              //Foods for render to UI
-            sideDishes: [],   //sideDishes for render to UI
+            sideDishes: [],                         //sideDishes for render to UI
             mainFoodList: [],                       //All foods from all category 
             sideDishList: [],                       //All side dishes all category
-            page: "home"
+            food: null,
+            needToAdd: false,
+            // Login-Register:
+            account: null,                           //account's user 
+            //Payment 
+            transaction: {
+                Uid: null,
+                When: null,
+                Product: null,
+                Total: null,
+                Status: null,
+            }                                
         }
+
         this.changeCategory = this.changeCategory.bind(this);
         this.addFood = this.addFood.bind(this);
         this.selectPage = this.selectPage.bind(this);
         this.isNeedToAdd = this.isNeedToAdd.bind(this);
+        this.setAccount = this.setAccount.bind(this);
+        this.goToPay = this.goToPay.bind(this);
+
         //add dimensions listener for window resizing
         window.addEventListener('resize', this.getWindowDimensions); 
     }
+
+
 
     isNeedToAdd(){
 		if(this.state.needToAdd){
@@ -63,6 +78,29 @@ class Controller extends React.Component {
 		}
 		return false;
 	}
+
+    goToPay(Product, Total) {
+        let Uid;
+        if (this.state.account == null) {
+            /*Guest transaction is -1*/
+            Uid = -1;
+        }
+        else {
+            Uid = this.state.account.id;
+        }
+        console.log(Product);
+        this.setState({
+            transaction: {
+                uid: Uid,
+                when: new Date().toISOString(),
+                product: Product,
+                total: Total,
+                status: "Thanh toán thành công"
+
+            }
+        })
+        this.selectPage("payment");
+    }
 
     selectPage = (Page) => {
         if (Page != this.state.page)
@@ -80,6 +118,15 @@ class Controller extends React.Component {
         })
     }
 
+    setAccount(account) {
+        this.setState({
+            account: account[0],
+            page: "home",
+        })
+        console.log("Home")
+        console.log(account);
+    }
+
     
     //remove listener on page exit
     componentWillUnmount() {
@@ -91,6 +138,8 @@ class Controller extends React.Component {
     }
 
     initialFoods(mainFoodList) {
+        console.log("MainFoodList: ");
+        console.log(mainFoodList);
         this.setState({
             foods: mainFoodList.filter(food => food.category === category.trangmieng),
             mainFoodList: mainFoodList,
@@ -148,28 +197,55 @@ class Controller extends React.Component {
         return (
             <div>
                 {/* Navbar */}
-                <MyNavbar changeCategory={this.changeCategory} selectPage={this.selectPage}/>
-                {this.state.page == "home" && <Homepage selectPage={this.selectPage}/>}
+                    <MyNavbar 
+                        changeCategory={this.changeCategory} 
+                        selectPage={this.selectPage} 
+                        account={this.state.account}
+                    />
+                {   /* Home page */
+                    this.state.page == "home" && 
+                    <Homepage selectPage={this.selectPage}/>
+                }
                 
-                {this.state.page == "menu" && <>
-                <Banner />
-                {/* Category */}
-                <Category changeCategory={this.changeCategory}/>
-                {/* Content */}
-                <Content 
-                    foods={this.state.foods} 
-                    sideDishes={this.state.sideDishes} 
-                    category={this.state.category} 
-                    window={this.state.window}
-                    addFood={this.addFood}
-                />
-                <Cart isNeedToAdd={this.isNeedToAdd} food={this.state.food}/>
-                </>}
+                
+                {   /* Menu page */
+                    this.state.page == "menu" && 
+                    <>
+                        <Banner />
+                        {/* Category */}
+                        <Category changeCategory={this.changeCategory}/>
+                        {/* Content */}
+                        <Content 
+                            foods={this.state.foods} 
+                            sideDishes={this.state.sideDishes} 
+                            category={this.state.category} 
+                            window={this.state.window}
+                            addFood={this.addFood}
+                        />
+                        <Cart 
+                            isNeedToAdd={this.isNeedToAdd} 
+                            food={this.state.food}
+                            goToPay={this.goToPay}
+                        />
+                    </>
+                }
+                {   /*Login page*/
+                    this.state.page === "login-register" &&
+                    <LoginRegisterPage setAccount={this.setAccount}/>
+
+                }
+                {
+                    /*Payment page*/
+                    this.state.page === "payment" && 
+                    <Payment 
+                        account={this.state.account}
+                        transaction={this.state.transaction}
+                        selectPage={this.selectPage}
+                    />
+                
+                }
                 {/* Footer */}
-                {/* <Button variant="primary" size="lg" onClick={this.changeCategory}>
-                    Testing button
-                </Button>{' '} */}
-                <Footer/>
+                    <Footer/>
             </div>
         );
     }

@@ -2,10 +2,14 @@ import React from 'react';
 import "./LoginRegister.css";
 import {Form, Button} from 'react-bootstrap';
 
-class LoginPage extends React.Component {
+class RegisterPage extends React.Component {
     state = {
         email: "",
+        name: "",
         password: "",
+    }
+
+    onSubmit() {
     }
 
     render() { 
@@ -19,12 +23,21 @@ class LoginPage extends React.Component {
                     placeholder="name@example.com" 
                     value={this.state.email}
                     onChange={e => this.setState({ email: e.target.value })}
-                />
+                    />
+            </Form.Group>
+            <Form.Group>
+                <Form.Label>Tên</Form.Label>
+                <Form.Control 
+                    type="text" 
+                    placeholder="Nguyen Van A" 
+                    value={this.state.name}
+                    onChange={e => this.setState({ name: e.target.value })}
+                    />
             </Form.Group>
             <Form.Group>
                 <Form.Label>Mật khẩu</Form.Label>
                 <Form.Control 
-                    type="password"
+                    type="password" 
                     placeholder="Password"
                     value={this.state.password}
                     onChange={e => this.setState({ password: e.target.value })}
@@ -32,20 +45,19 @@ class LoginPage extends React.Component {
             </Form.Group>
             <Button 
                 className="btn-lg- btn-dark btn-block login-register-button"
-                onClick={() => this.props.onSubmitLogin(this.state.email, this.state.password)}
-            >
-                Đăng nhập
+                onClick={() => this.props.onSubmitRegister(this.state.email, this.state.name, this.state.password)}
+                >
+                Đăng ký
             </Button>
-            <div>Quên mật khẩu? </div>
             <Button 
                 className="btn-lg- btn-dark btn-block login-register-button"
                 onClick={() => this.props.changePage()}
-            >
-                    Tạo tài khoản
-                </Button>
+                >
+                Đã có tải khoản?
+            </Button>
         </Form>)
         ;
     }
 }
  
-export default LoginPage;
+export default RegisterPage;
