@@ -1,7 +1,8 @@
 import React from "react";
-import { Navbar, Container, Nav, NavDropdown, Form, FormControl, Button } from "react-bootstrap";
+import { Navbar, Container, Nav, NavDropdown} from "react-bootstrap";
 // import { useEffect } from 'react';
 // import './myBanner.css';
+import "./Navbar.css"
 
 const category = {
   rice: "Món cơm",
@@ -17,6 +18,7 @@ class MyNavbar extends React.Component {
       if (this.props.account === null) {
         return (
             <Nav.Link  
+              className="navbar-item"
               style={{margin: "0 25px" }} 
               onClick = {() => this.props.selectPage("login-register")}>
               Login
@@ -24,6 +26,7 @@ class MyNavbar extends React.Component {
       }
       return (
           <Nav.Link 
+            className="navbar-item"
             style={{margin: "0 25px" }} 
             onClick = {() => this.props.selectPage("account")}>
             Account
@@ -40,7 +43,7 @@ class MyNavbar extends React.Component {
             <Container fluid>
               <Navbar.Brand href="#">
                 <img src ="https://i.imgur.com/3AUAOKZ.jpg" alt="" width="40" height = "35"></img>
-                <span>HyperWindy</span>
+                <span className="navbar-title"> HYPER WINDY </span>
               </Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbarScroll" />
                   <Navbar.Collapse id="navbarScroll">
@@ -55,29 +58,33 @@ class MyNavbar extends React.Component {
                                  }}
                       navbarScroll
                     >
-                  <Nav.Link style={{margin: "0 25px" }} onClick = {() => this.props.selectPage("home")}>Home</Nav.Link>
-                  <NavDropdown title="Menu" id="navbarScrollingDropdown"  style={{margin: "0 25px" }}>
-                  <NavDropdown.Item onClick = {() => this.props.changeCategory(category.rice)}>Món cơm</NavDropdown.Item>
-                  <NavDropdown.Item onClick = {() => this.props.changeCategory(category.pho)}>Món phở</NavDropdown.Item>
-                  <NavDropdown.Item onClick = {() => this.props.changeCategory(category.stickyrice)}>Món xôi</NavDropdown.Item>
-                  <NavDropdown.Item onClick = {() => this.props.changeCategory(category.noodle)}>Món mì</NavDropdown.Item>
-                  <NavDropdown.Item onClick = {() => this.props.changeCategory(category.dessert)}>Món tráng miệng</NavDropdown.Item>
-                  <NavDropdown.Item onClick = {() => this.props.changeCategory(category.drink)}>Thức uống</NavDropdown.Item>
+                  <Nav.Link className="navbar-item" style={{margin: "0 25px" }} onClick = {() => this.props.selectPage("home")}>Home</Nav.Link>
+                  <NavDropdown className="navbar-item" title="Menu" id="navbarScrollingDropdown"  style={{margin: "0 25px" }}>
+                  <NavDropdown.Item className="navbar-item" onClick = {() => this.props.changeCategory(category.rice)}>Món cơm</NavDropdown.Item>
+                  <NavDropdown.Item className="navbar-item" onClick = {() => this.props.changeCategory(category.pho)}>Món phở</NavDropdown.Item>
+                  <NavDropdown.Item className="navbar-item" onClick = {() => this.props.changeCategory(category.stickyrice)}>Món xôi</NavDropdown.Item>
+                  <NavDropdown.Item className="navbar-item" onClick = {() => this.props.changeCategory(category.noodle)}>Món mì</NavDropdown.Item>
+                  <NavDropdown.Item className="navbar-item" onClick = {() => this.props.changeCategory(category.dessert)}>Món tráng miệng</NavDropdown.Item>
+                  <NavDropdown.Item className="navbar-item" onClick = {() => this.props.changeCategory(category.drink)}>Thức uống</NavDropdown.Item>
                 
           {/* <NavDropdown.Divider />
           <NavDropdown.Item href="#action5">
             Something else here */}
           {/* </NavDropdown.Item> */}
                   </NavDropdown>
-                  <Nav.Link href="#action6" style={{margin: "0 25px" }} onClick = {() => this.props.selectPage("about")}>
+                  <Nav.Link 
+                    className="navbar-item" 
+                    href="#action6" 
+                    style={{margin: "0 25px" }} 
+                    onClick = {() => this.props.selectPage("about")}>
                     About
                   </Nav.Link>
-                  <Nav.Link href="#action7" style={{margin: "0 25px" }} onClick = {() => this.props.selectPage("contact")}>
+                  <Nav.Link className="navbar-item" href="#action7" style={{margin: "0 25px" }} onClick = {() => this.props.selectPage("contact")}>
                     Contact
                   </Nav.Link>
                   {loginNavBar}
                 </Nav>
-              <Form className="d-flex">
+              {/* <Form className="d-flex">
                 <FormControl
                   type="search"
                   placeholder="Search"
@@ -85,7 +92,7 @@ class MyNavbar extends React.Component {
                   aria-label="Search"
                 />
               <Button variant="outline-success">Search</Button>
-              </Form>
+              </Form> */}
             </Navbar.Collapse>
           </Container>
           

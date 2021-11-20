@@ -13,7 +13,7 @@ class ListFood extends React.Component {
         /*Must measure both window and food list chang */
         if ((this.props.window.width >= 866 && nextProps.window.width < 865) ||
             (this.props.window.width <= 865 && nextProps.window.width > 866) || 
-            this.props.foods != nextProps.foods
+            this.props.foods !== nextProps.foods
             ) {
             return true;
         }

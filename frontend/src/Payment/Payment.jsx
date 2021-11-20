@@ -11,6 +11,11 @@ class PaymentUI extends React.Component {
         this.onSubmit = this.onSubmit.bind(this);
     }
 
+    refreshList() {
+        alert("Thanh toán thành công");
+    }
+
+
     onSubmit() {
         let transaction = this.props.transaction;
         console.log("Log before submit")
@@ -19,7 +24,6 @@ class PaymentUI extends React.Component {
             .post("https://pure-retreat-31306.herokuapp.com/api/transHises/", transaction)
             .then((res) => {
                 this.refreshList();
-                alert("Thanh toán thành công");
             }).catch((err) => console.log(err));
         this.props.selectPage("home");
     }
@@ -27,7 +31,9 @@ class PaymentUI extends React.Component {
     render() {
         return (
             <Form className="payment-form">
-            <h2 className="text-center "></h2>
+            <h2 className="text-center ">
+            Thanh toán
+            </h2>
             <Form.Group>
                 <Form.Label>Card number</Form.Label>
                 <Form.Control 

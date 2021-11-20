@@ -19,7 +19,8 @@ class Content extends React.Component {
             src: null,
             name: null,
             price: null,
-            quantity: null
+            quantity: null,
+            description: null
         }
         this.addFood = this.addFood.bind(this);
     }
@@ -37,7 +38,7 @@ class Content extends React.Component {
 	}
 
     
-	openModal = (src, name, price) => {
+	openModal = (src, name, price, description) => {
         // control modal
         if (this.state.setModal) {
             /*Don't open modal if Modal is open*/
@@ -46,6 +47,7 @@ class Content extends React.Component {
 		this.food.src = src;
 		this.food.name = name;
 		this.food.price = price;
+        this.food.description = description;
 		this.setState({setModal: true});
 	}
 

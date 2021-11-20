@@ -20,7 +20,7 @@ class Cart extends React.Component {
     }
 
     goToPay() {
-        if (this.state.foods.length == 0) {
+        if (this.state.foods.length === 0) {
             alert("Ban chưa chọn thức ăn nào vào giỏ hàng.")
             return;
         }
@@ -43,7 +43,9 @@ class Cart extends React.Component {
 
     addFood(food) {
         const f = cloneDeep(food);
-        this.state.foods = this.state.foods.concat({food: f});
+        this.setState({
+            foods: this.state.foods.concat({food: f}),
+        })
         console.log(this.state.foods);
       }
 
@@ -96,8 +98,8 @@ class Cart extends React.Component {
                 <tr>
                         <td>
                             <div class="cart-info">
-                                <img src={item.food.src}></img>
-                                <div class="info">
+                                <img alt='food image' src={item.food.src}></img>
+                                <div class="info"> 
                                     <strong>{item.food.name}</strong>
                                     <small><div>Price:</div> <DisplayPrice price={item.food.price}/></small>
                                 </div>

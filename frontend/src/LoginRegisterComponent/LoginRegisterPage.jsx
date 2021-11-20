@@ -1,6 +1,6 @@
 import React from 'react';
 import "./LoginRegister.css";
-import {Container, Button} from 'react-bootstrap';
+import {Container} from 'react-bootstrap';
 import LoginPage from './LoginPage';
 import RegisterPage from './RegisterPage';
 import axios from "axios";
@@ -70,7 +70,7 @@ class LoginRegisterPage extends React.Component {
 
     onSubmitLogin(email, password) {
         /*To do find email*/
-        if (this.state.accountList == null || this.state.accountList.length == 0) 
+        if (this.state.accountList === null || this.state.accountList.length === 0) 
             return;
 
         let account = this.state.accountList.filter(

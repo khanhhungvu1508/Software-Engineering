@@ -12,16 +12,16 @@ const category = {
 
 class ContentTitle extends React.Component {
     getBackground(title) {
-        if (category.mi == title) {
+        if (category.mi === title) {
             return 'url("http://nunforest.com/koad-demo/upload/menu/pasta-ban@2x.jpg")';
         }
-        if (category.pho == title) {
+        if (category.pho === title) {
             return 'url("http://nunforest.com/koad-demo/upload/menu/pizza-ban@2x.jpg")';
         }
-        if (category.com == title) {
+        if (category.com === title) {
             return 'url("http://nunforest.com/koad-demo/upload/menu/pizza-ban@2x.jpg")';
         }
-        if (category.xoi == title) {
+        if (category.xoi === title) {
             return 'url("http://nunforest.com/koad-demo/upload/menu/burger-ban@2x.jpg")';
         }
         else {
@@ -42,7 +42,7 @@ class ContentTitle extends React.Component {
                 //     width: "100%"
                 // }
             >
-                <div class="content_background_content">{this.props.title}</div>
+                <div className="content_background_content">{this.props.title}</div>
             </div>
         );
     }

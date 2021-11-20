@@ -1,0 +1,63 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+
+.about-container {
+    margin-top: 100px;
+}
+
+.about-body {
+    display: flex;
+    margin: auto;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.info-body {
+    width: 300px;
+    text-align: center;
+    margin: auto;
+
+}
+
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+  }
+  
+  .fa:hover {
+      opacity: 0.7;
+  }
+  
+
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+  }
+
+.info-img {
+    border-radius: 50%;
+    width: 100%;
+    height: 300px;
+    margin-bottom: 15px;
+}
+
+.info-name {
+    font-family: "Zilla Slab", serif;
+    color: #23292c;
+    font-weight: 600;
+    margin-bottom: 0px;
+    line-height: 20px;
+    font-size: 28px;
+    margin: 5px;
+}
+
+.info-description {
+    font-family: "Zilla Slab", serif;
+    font-size: 16px;
+    color: #777777;
+    font-weight: 400;
+    line-height: 26px;
+}

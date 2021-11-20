@@ -1,0 +1,21 @@
+
+.homepage-subtitle {
+    font-family: "Zilla Slab", serif;
+    font-size: 30px;
+    
+}
+
+.homepage-title {
+    font-family: "Zilla Slab", serif;
+    font-size: 60px
+}
+
+@media screen and (min-width: 601px) {
+    homepage-subtitle {
+      font-size: 80px;
+    }
+
+    homepage-title {
+        font-size: 80px;
+      }
+  }

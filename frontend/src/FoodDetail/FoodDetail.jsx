@@ -14,6 +14,7 @@ class FoodDetail extends React.Component {
             overview: {
                 foodName: this.props.food.name,
                 price: this.props.food.price,
+                description: this.props.food.description
             },
             quantity: 1,
         }
@@ -63,6 +64,7 @@ class FoodDetail extends React.Component {
 
     //Add to grocery
     addFood = () => {
+        alert("Đã thêm vào giỏ hàng");
         this.props.addFood(this.state.quantity);
     }
     handleCloseModal = () => {

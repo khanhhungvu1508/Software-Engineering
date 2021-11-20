@@ -2,14 +2,16 @@ import React from 'react';
 import Content from './ContentComponents/Content';
 import axios from "axios";
 
-import Category from './components/category';
-import MyNavbar from './components/navbar';
-import Banner from './components/Banner';
-import Homepage from './components/Homepage';
+import Category from './Header/category';
+import MyNavbar from './Header/navbar';
+import Banner from './Header/Banner';
+import Homepage from './Header/Homepage';
 import Cart from './Cart/cart';
 import Footer from './Footer/footer';
 import Payment from './Payment/Payment'
 import LoginRegisterPage from './LoginRegisterComponent/LoginRegisterPage';
+import Account from './Account/Account';
+import AboutPage from './About/About';
 
 
 const category = {
@@ -73,7 +75,9 @@ class Controller extends React.Component {
 
     isNeedToAdd(){
 		if(this.state.needToAdd){
-			this.state.needToAdd = false;
+			this.setState({
+                needToAdd: false,
+            })
 			return true;
 		}
 		return false;
@@ -81,7 +85,7 @@ class Controller extends React.Component {
 
     goToPay(Product, Total) {
         let Uid;
-        if (this.state.account == null) {
+        if (this.state.account === null) {
             /*Guest transaction is -1*/
             Uid = -1;
         }
@@ -103,7 +107,7 @@ class Controller extends React.Component {
     }
 
     selectPage = (Page) => {
-        if (Page != this.state.page)
+        if (Page !== this.state.page)
         {
             this.setState({
                 page: Page
@@ -134,14 +138,16 @@ class Controller extends React.Component {
     }
     
     getWindowDimensions = () => {
-        this.setState({ window: { width: window.innerWidth, height: window.innerHeight} });
+        this.setState(
+            { window: { width: window.innerWidth, height: window.innerHeight}
+        });
     }
 
     initialFoods(mainFoodList) {
         console.log("MainFoodList: ");
         console.log(mainFoodList);
         this.setState({
-            foods: mainFoodList.filter(food => food.category === category.trangmieng),
+            foods: mainFoodList.filter(food => food.category === category.rice),
             mainFoodList: mainFoodList,
         }, () => console.log(this.state.foods));
     }
@@ -151,7 +157,7 @@ class Controller extends React.Component {
         console.log(sideDishList);
         this.setState({
             sideDishes: sideDishList.filter(sideDish => 
-                sideDish.category.split(",").includes(category.trangmieng)
+                sideDish.category.split(",").includes(category.rice)
             ),
             sideDishList: sideDishList,
         }, () => console.log(this.state.sideDishes));
@@ -171,7 +177,7 @@ class Controller extends React.Component {
 
     changeCategory(category) {
         /*Testing function*/
-        if (this.state.page != "menu")
+        if (this.state.page !== "menu")
             this.selectPage("menu");
         this.setFoodsByCategory(category);
     }
@@ -194,8 +200,12 @@ class Controller extends React.Component {
       };
 
     render() { 
+        /*Default position on top of page*/
+        window.scrollTo(0, 0);
         return (
-            <div>
+            <div
+                style={{background: "#FFFFFF"}}
+            >
                 {/* Navbar */}
                     <MyNavbar 
                         changeCategory={this.changeCategory} 
@@ -203,13 +213,13 @@ class Controller extends React.Component {
                         account={this.state.account}
                     />
                 {   /* Home page */
-                    this.state.page == "home" && 
+                    this.state.page === "home" && 
                     <Homepage selectPage={this.selectPage}/>
                 }
                 
                 
                 {   /* Menu page */
-                    this.state.page == "menu" && 
+                    this.state.page === "menu" && 
                     <>
                         <Banner />
                         {/* Category */}
@@ -243,6 +253,19 @@ class Controller extends React.Component {
                         selectPage={this.selectPage}
                     />
                 
+                }
+                {
+                    /*Payment page*/
+                    this.state.page === "account" && 
+                    <Account 
+                        account={this.state.account}
+                    />
+                
+                }
+                {
+                    /*About page*/
+                    this.state.page === "about" &&
+                    <AboutPage  window={this.state.window} />
                 }
                 {/* Footer */}
                     <Footer/>

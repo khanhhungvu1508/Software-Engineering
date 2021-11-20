@@ -4,6 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family:"Zilla Slab", serif
 }
 
 .f-body {
@@ -12,7 +13,7 @@
   align-items: center;
   min-height: 100vh;
   flex-direction: column;
-  background: #ede7f6;
+  background: #fff;
   font-family: "Poppins", sans-serif;
 }
 
@@ -93,7 +94,7 @@ footer .sci li a:hover {
 
 .footer-mid {
   position: relative;
-  width: 25%;
+  width: 35%;
 }
 
 .footer-mid ul li {

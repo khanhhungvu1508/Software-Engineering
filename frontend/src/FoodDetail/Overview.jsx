@@ -20,7 +20,7 @@ class Overview extends React.Component {
                     </span>
                 </Col>
                 <div class="fooddetail_overview_describe">
-                    Những Món Cơm Gà Sốt Đậm Đà Hương Vị Việt Được Hòa Quyện Nước Sốt Trứ Danh Độc Quyền. Mang Đến Cho Bạn Trải Nghiệm Khó Quên Ngay Từ Lần Thử Đầu Tiên! Rice Bento.
+                    {this.props.overview.description}
                 </div>
             </Row>
         );

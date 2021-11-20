@@ -27,7 +27,7 @@ class Footer extends React.Component{
           <h2>Quick Links</h2>
 
           <ul>
-          <li><a href="#">About</a></li>
+          <li><a style={{fontFamily:'"Zilla Slab", serif'}}href="#">About</a></li>
           <li><a href="#">FAQ</a></li>
           <li><a href="#">Privacy Policy</a></li>
           <li><a href="#">Help</a></li>

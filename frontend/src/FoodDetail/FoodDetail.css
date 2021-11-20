@@ -6,7 +6,7 @@
     color: #B01F21;
     display: flex;
     text-align: end;
-    justify-content: flex-end;
+    justify-content: flex-start;
 }
 
 
@@ -49,7 +49,7 @@
     display: inline-block;
     font-family: "Zilla Slab", serif;
     font-weight: bold;
-    font-size: large;
+    font-size: x-large;
 }
 
 .fooddetail_overview_describe {
