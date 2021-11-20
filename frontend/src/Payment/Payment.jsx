@@ -8,6 +8,11 @@ import axios from "axios";
 class PaymentUI extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            cardNumber: "",
+            date: "",
+            cvv: ""
+        }
         this.onSubmit = this.onSubmit.bind(this);
     }
 
@@ -17,6 +22,14 @@ class PaymentUI extends React.Component {
 
 
     onSubmit() {
+        if (this.state.cardNumber.length !== 16) {
+            alert("Mã số thẻ bạn nhập không hợp lệ");
+            return;
+        }
+        if (this.state.cvv !== 3) {
+            alert("Số cvv bạn nhập không hợp lệ");
+            return;
+        }
         let transaction = this.props.transaction;
         console.log("Log before submit")
         console.log(transaction);
@@ -39,6 +52,10 @@ class PaymentUI extends React.Component {
                 <Form.Control 
                     type="text" 
                     placeholder="1234 7843 1237 1279" 
+                    value={this.state.cardNumber}
+                    onChange={(e) => this.setState({
+                        cardNumber: e.target.value
+                    })}
                     />
             </Form.Group>
             <Form.Group>
@@ -46,6 +63,10 @@ class PaymentUI extends React.Component {
                 <Form.Control 
                     type="date" 
                     placeholder="19/06/2020" 
+                    value={this.state.date}
+                    onChange={(e) => this.setState({
+                        date: e.target.value
+                    })}
                     />
             </Form.Group>
             <Form.Group>
@@ -53,6 +74,10 @@ class PaymentUI extends React.Component {
                 <Form.Control 
                     type="number" 
                     placeholder="658"
+                    value={this.state.cvv}
+                    onChange={(e) => this.setState({
+                        cvv: e.target.value
+                    })}
                 />
             </Form.Group>
             <Button 

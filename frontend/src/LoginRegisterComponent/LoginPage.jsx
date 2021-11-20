@@ -36,10 +36,10 @@ class LoginPage extends React.Component {
             >
                 Đăng nhập
             </Button>
-            <div>Quên mật khẩu? </div>
+            <div onClick={() => this.props.changePage("forgot")}>Quên mật khẩu? </div>
             <Button 
                 className="btn-lg- btn-dark btn-block login-register-button"
-                onClick={() => this.props.changePage()}
+                onClick={() => this.props.changePage("login")}
             >
                     Tạo tài khoản
                 </Button>

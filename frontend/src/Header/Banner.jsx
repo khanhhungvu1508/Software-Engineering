@@ -6,9 +6,8 @@ class Banner extends React.Component {
         return (
             <>
                 <div 
-                    class ="container" 
                     className ="page-banner-section">
-                    <h1> Our Menu</h1>
+                    <h1>Menu</h1>
                     <span>  Không ngon không lấy tiền </span>
                 </div>
             </>

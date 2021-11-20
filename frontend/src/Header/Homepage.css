@@ -1,21 +1,41 @@
 
 .homepage-subtitle {
     font-family: "Zilla Slab", serif;
-    font-size: 30px;
+    font-size: 100px;
     
 }
 
 .homepage-title {
     font-family: "Zilla Slab", serif;
-    font-size: 60px
+    font-size: 140px
 }
 
-@media screen and (min-width: 601px) {
+.homepage-button {
+  color: '#ffffff';
+  background: '#ea462b';
+  font-size: '18px';
+  font-weight:'600';
+  border-width: '0px';
+  margin: '0px';
+  padding: '10px 33px'
+}
+
+/* @media screen and (max-width: 601px) {
     homepage-subtitle {
-      font-size: 80px;
+      font-size: 60px;
     }
 
     homepage-title {
         font-size: 80px;
       }
   }
+
+  @media screen and (max-width: 1200px) {
+    homepage-subtitle {
+      font-size: 80px;
+    }
+
+    homepage-title {
+        font-size: 100px;
+      }
+  } */

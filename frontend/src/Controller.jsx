@@ -147,6 +147,7 @@ class Controller extends React.Component {
         console.log("MainFoodList: ");
         console.log(mainFoodList);
         this.setState({
+            category: category.rice,
             foods: mainFoodList.filter(food => food.category === category.rice),
             mainFoodList: mainFoodList,
         }, () => console.log(this.state.foods));

@@ -10,7 +10,7 @@
   margin-bottom: 0px;
   font-family: "Zilla Slab", serif;
   font-weight: 600;
-  margin-left: 10px;
+  margin-left: 100px;
 }
 .page-banner-section span {
   font-size: 22px;
@@ -18,6 +18,18 @@
   font-weight: 400;
   margin-bottom: 0;
   color: #999999; 
-  margin-left: 10px;
+  margin-left: 100px;
 }
+
+@media (max-width: 480px) {
+  .page-banner-section h1 {
+    margin-left: 50px;
+  }
+
+  .page-banner-section span {
+    margin-left: 50px;
+  }
+}
+
+
 

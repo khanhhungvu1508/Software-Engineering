@@ -4,13 +4,14 @@ import {Container} from 'react-bootstrap';
 import LoginPage from './LoginPage';
 import RegisterPage from './RegisterPage';
 import axios from "axios";
+import ForgottenPagewordPage from './ForgottenPasswordPage';
 
 
 class LoginRegisterPage extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            isLogin: true,
+            page: "login",
             accountList: [],
         }
         this.changePage = this.changePage.bind(this);
@@ -18,11 +19,9 @@ class LoginRegisterPage extends React.Component {
         this.onSubmitRegister = this.onSubmitRegister.bind(this);
     }
 
-    changePage() {
-        console.log(this.state.isLogin);
-        const isLogin = this.state.isLogin;
+    changePage(page) {
         this.setState({
-            isLogin: !isLogin,
+            page: page,
         });
     }
 
@@ -92,18 +91,24 @@ class LoginRegisterPage extends React.Component {
 
     render() { 
         let loginRegisterBody;
-        if (this.state.isLogin) {
+        if (this.state.page === "login") {
             loginRegisterBody = 
                 <LoginPage 
                     changePage={this.changePage}
                     onSubmitLogin={this.onSubmitLogin}
                 />;
         }
-        else {
+        else if (this.state.page === "register"){
             loginRegisterBody = 
                 <RegisterPage 
                     changePage={this.changePage}
                     onSubmitRegister={this.onSubmitRegister}
+                />;
+        }
+        else {
+            loginRegisterBody = 
+                <ForgottenPagewordPage 
+                    changePage={this.changePage}
                 />;
         }
         return (

@@ -4,6 +4,7 @@ import { Carousel } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.css';
 import './myBanner.css';
+import { dividerClasses } from "@mui/material";
 
 const cssstyle = `
     .navbar-list {
@@ -66,6 +67,27 @@ const cssstyle = `
         }
     }
 `;
+
+const carousel_css = `
+    .homepage-title {
+        font-size: 80px
+    }
+
+    .homepage-subtitle {
+        font-size: 25px
+    }
+
+    @media only screen and (max-width : 500px) {
+        .homepage-title {
+            font-size:40px
+        }
+
+        .homepage-subtitle {
+            font-size: 16px
+        }
+    }
+    
+`
 
 class Homepage extends React.Component {
     state = {
@@ -150,38 +172,40 @@ class Homepage extends React.Component {
             <>  
             <Carousel id = "myCarousel">
               <Carousel.Item interval={1000}>
-                <img
-                  className="d-block min-vh-100"
-                  src="http://nunforest.com/koad-demo/upload/slider/slide1.jpg"
-                  alt="First slide"
-                />
-                <Carousel.Caption style ={{
-                                          color: '#23292c',
-                                          fontFamily: 'Zilla Slab',
-                                          transform: 'translateY(-50%)',
-                                          bottom: 'initial',
-                                          top: '50%',
-                                          right: '50%',
-                                          minWidth: '250px'
-                                          }}>
-                  <h1 className="homepage-title">
-                      Food for your Soul
-                    </h1>
-                  <span className="homepage-subtitle">
-                      Thưởng thức theo cách của bạn.
-                    </span><br />
-                  <Button style = {{ color: '#ffffff',
-                                     background: '#ea462b',
-                                     fontSize: '18px',
-                                     fontWeight:'600',
-                                     borderWidth: '0px',
-                                     margin: '0px',
-                                     padding: '10px 33px',
-                                     fontFamily:'"Zilla Slab", serif'
-                                  }}
-                  onClick = {() => this.props.selectPage("menu")}> 
-                  View our menu</Button>
-                </Carousel.Caption>
+                  
+                    <img
+                    className="d-block min-vh-100"
+                    src="http://nunforest.com/koad-demo/upload/slider/slide1.jpg"
+                    alt="First slide"
+                    />
+                    <Carousel.Caption style ={{
+                                            color: '#23292c',
+                                            fontFamily: 'Zilla Slab',
+                                            transform: 'translateY(-50%)',
+                                            bottom: 'initial',
+                                            top: '50%',
+                                            right: '50%',
+                                            minWidth: '250px'
+                                            }}>
+                    <style>{carousel_css}</style>
+                    <h1 className="homepage-title">
+                        Food for your Soul
+                        </h1>
+                    <span className="homepage-subtitle">
+                        Thưởng thức theo cách của bạn.
+                        </span><br />
+                    <Button style = {{ color: '#ffffff',
+                                        background: '#ea462b',
+                                        fontSize: '18px',
+                                        fontWeight:'600',
+                                        borderWidth: '0px',
+                                        margin: '0px',
+                                        padding: '10px 33px',
+                                        fontFamily:'"Zilla Slab", serif'
+                                    }}
+                    onClick = {() => this.props.selectPage("menu")}> 
+                    View our menu</Button>
+                    </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item interval={1000}>
               <img
@@ -197,10 +221,11 @@ class Homepage extends React.Component {
                                         top: '50%',
                                         right: '50%',
                                         minWidth: '250px'}}>
-                <h1 
+                <style>{carousel_css}</style>
+                <div
                     className="homepage-title">
                     Food for your life
-                </h1>
+                </div>
                 <span 
                     className="homepage-subtitle"
                     >

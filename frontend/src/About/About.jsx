@@ -1,5 +1,9 @@
 import React from 'react';
 import huy_image from "./Image/Huy.jpeg"
+import thai_image from "./Image/Thai.jpg"
+import phong_image from "./Image/Phong.jpg"
+import quang_image from "./Image/Quang.jpg"
+import hung_image from "./Image/Hung.jpg"
 import {Col, Row, Container} from 'react-bootstrap';
 import './About.css'
 
@@ -13,13 +17,13 @@ function Info(props) {
                 className="info-img"
                 src={props.src}
             />
-            <h3
+            <h4
                 className="info-name"
-            >{props.name}</h3>
+            >{props.name}</h4>
             <div
                 className="info-description"
             >{props.description}</div>
-            <a href="https://www.facebook.com/minhhuy.vunguyen.5/" class="fa fa-facebook"></a>
+            <a href={props.facebook} class="fa fa-facebook"></a>
         </div>
     );
 }
@@ -50,34 +54,38 @@ class AboutPage extends React.Component {
             <Row className="about-body">
                 <Col>
                     <Info 
-                        src={huy_image}
-                        name={"Vũ Nguyễn Minh Huy"}
-                        description={"Interested in AI/ML, Research on CV"}
+                        src={quang_image}
+                        name={"Nguyễn Văn Vinh Quang"}
+                        description={"Passionate about making web Facebook"}
+                        facebook={"https://www.facebook.com/gerd.quang.1311/"}
                         />
                 </Col>
                 <Col>
                     <Info 
-                        src={huy_image}
-                        name={"Vũ Nguyễn Minh Huy"}
-                        description={"Interested in AI/ML, Research on CV"}
+                        src={thai_image}
+                        name={"Ngô Minh Hồng Thái"}
+                        description={"Interested in DSP, Research on Speech"}
+                        facebook={"https://www.facebook.com/thai.ngo.94214508"}
                         />
                 
                 
                 </Col>
                 <Col>
                     <Info 
-                        src={huy_image}
-                        name={"Vũ Nguyễn Minh Huy"}
-                        description={"Interested in AI/ML, Research on CV"}
+                        src={phong_image}
+                        name={"Tô Thanh Phong"}
+                        description={"Interested in Algorithm, AI/ML."}
+                        facebook={"https://www.facebook.com/Hyperwindy/"}
                         />                
                 </Col>
             </Row>
             <Row className="about-body">
                 <Col>
                     <Info 
-                        src={huy_image}
-                        name={"Vũ Nguyễn Minh Huy"}
-                        description={"Interested in AI/ML, Research on CV"}
+                        src={hung_image}
+                        name={"Vũ Khánh Hưng"}
+                        description={"Interested in Algorithms, Web and embedded. Like playing game and listening to radio"}
+                        facebook={"https://www.facebook.com/hung.vu2431508"}
                         />
                 </Col>
                 <Col>
@@ -85,6 +93,7 @@ class AboutPage extends React.Component {
                         src={huy_image}
                         name={"Vũ Nguyễn Minh Huy"}
                         description={"Interested in AI/ML, Research on CV"}
+                        facebook={"https://www.facebook.com/minhhuy.vunguyen.5/"}
                         />
                 </Col>
             </Row>
