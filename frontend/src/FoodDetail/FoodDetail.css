@@ -1,0 +1,119 @@
+/*
+    DISPLAY PRICE
+*/
+.fooddetail_display_price {
+    font-family: "Zilla Slab", serif;
+    color: #B01F21;
+    display: flex;
+    text-align: end;
+    justify-content: flex-start;
+}
+
+
+/*
+    IMAGE 
+*/
+.fooddetail_img {
+   display: 'flex';
+   width: 100%;
+   justify-content: 'center'
+}
+
+
+/*
+    SIDE DISK
+*/
+
+.fooddetail_sidedisk_item_name {
+    font-size: medium;
+    font-family: "Zilla Slab", serif;
+    font-family: "bold";
+}
+
+.fooddetail_sidedisk_name {
+    width: 100%;
+    font-family: "Zilla Slab", serif;
+    font-family: "bold";
+}
+
+.fooddetail_sidedisk_checkbox {
+    font-family: "Zilla Slab", serif;
+}
+
+
+/*
+    OVERVIEW
+*/
+
+.fooddetail_overview_name {
+    display: inline-block;
+    font-family: "Zilla Slab", serif;
+    font-weight: bold;
+    font-size: x-large;
+}
+
+.fooddetail_overview_describe {
+    font-family: "Zilla Slab", serif;
+    font-size: 16px;
+    color: #777777;
+    font-weight: 400;
+    line-height: 26px;
+}
+/*
+    COUNTER
+*/
+.fooddetail_counter_title_container {
+    position: relative;
+    height: 100%;
+}
+
+.fooddetail_counter_title_content {
+    position: absolute;
+    width: 100%;
+    top: 30%;
+    bottom: 30%;
+    font-family: "Zilla Slab", serif;
+}
+
+
+.fooddetail_counter_container {
+    width: 150px;
+    text-align: center;
+    font-family: "Zilla Slab", serif;
+  }
+  
+.fooddetail_counter_value-button {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    vertical-align: middle;
+    padding: 11px 0;
+    background: #2B292C;
+    color: #fff;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  .value-button:hover {
+    cursor: pointer;
+  }
+  
+  .fooddetail_counter_input {
+    display: inline-block;
+    text-align: center;
+    border: none;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 50px;
+    height: 100%;
+  }
+
+  @media only screen and (max-width: 866px) {
+    .fooddetail_counter_value-button {
+        width: 40px;
+        height: 40px;
+    }
+  }

@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+
+
+/*Login form*/
+.payment-form {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: auto;
+    color: black;
+    height: 500px;
+    margin-top: 100px;
+}
+.payment-button {
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.login-register-background {
+    background: url("http://nunforest.com/koad-demo/upload/banners/1@2x.jpg") center center no-repeat;
+    position: relative;
+    width: 100%;
+    background-size: cover;
+    resize: both;
+}

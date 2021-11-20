@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+
+
+/*Login form*/
+.account-form {
+    width: 100%;
+    max-width: 630px;
+    padding: 15px;
+    margin: auto;
+    color: black;
+    margin-top: 100px;
+}
+
+.account-form {
+    text-align: center;
+}
