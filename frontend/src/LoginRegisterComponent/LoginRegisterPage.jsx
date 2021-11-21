@@ -20,6 +20,7 @@ class LoginRegisterPage extends React.Component {
     }
 
     changePage(page) {
+        console.log(page);
         this.setState({
             page: page,
         });

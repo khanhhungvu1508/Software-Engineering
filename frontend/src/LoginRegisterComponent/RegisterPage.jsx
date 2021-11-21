@@ -51,7 +51,7 @@ class RegisterPage extends React.Component {
             </Button>
             <Button 
                 className="btn-lg- btn-dark btn-block login-register-button"
-                onClick={() => this.props.changePage("register")}
+                onClick={() => this.props.changePage("login")}
                 >
                 Đã có tải khoản?
             </Button>
