@@ -38,7 +38,7 @@ class Footer extends React.Component{
           <ul class="info">
           <li>
               <span><FontAwesomeIcon icon={faMapMarkedAlt} /></span>
-              <p>Avenue Marina 34568 NY (U.S)</p>
+              <p>Ho Chi Minh City University of Technology (V.N)</p>
           </li>
           <li>
               <span><FontAwesomeIcon icon={faPhone} /></span>
@@ -46,14 +46,14 @@ class Footer extends React.Component{
           </li>
           <li>
               <span><FontAwesomeIcon icon={faEnvelope} /></span>
-              <p>statumsupport@mail.com</p>
+              <p>hyperwindy_support@gmail.com</p>
           </li>
         </ul>
         </div>
         </div>
       </footer>
       <div class="copyrightText">
-        <p>Copyright &copy; 2020 Koad Bistro. All rights reserved.</p>
+        <p>Copyright &copy; 2021 Hyper Windy. All rights reserved.</p>
         </div>
       </div>
 		)
