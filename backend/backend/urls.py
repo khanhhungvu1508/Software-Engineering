@@ -18,10 +18,15 @@ from django.urls import path, include
 from rest_framework import routers
 from mainFood import views as fv
 from sideFood import views as sv
+from account import views as av
+from transHis import views as tv
 
 router = routers.DefaultRouter()
 router.register(r'mainFoods', fv.MainFoodView, 'mainFood')
 router.register(r'sideFoods', sv.SideFoodView, 'sideFood')
+router.register(r'accounts', av.AccountView, 'account')
+router.register(r'transHises', tv.TransHisView, 'transHis')
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
