@@ -39,7 +39,7 @@ class LoginPage extends React.Component {
             <div onClick={() => this.props.changePage("forgot")}>Quên mật khẩu? </div>
             <Button 
                 className="btn-lg- btn-dark btn-block login-register-button"
-                onClick={() => this.props.changePage("login")}
+                onClick={() => this.props.changePage("register")}
             >
                     Tạo tài khoản
                 </Button>

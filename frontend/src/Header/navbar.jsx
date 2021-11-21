@@ -79,9 +79,6 @@ class MyNavbar extends React.Component {
                     onClick = {() => this.props.selectPage("about")}>
                     About
                   </Nav.Link>
-                  <Nav.Link className="navbar-item" href="#action7" style={{margin: "0 25px" }} onClick = {() => this.props.selectPage("contact")}>
-                    Contact
-                  </Nav.Link>
                   {loginNavBar}
                 </Nav>
               {/* <Form className="d-flex">

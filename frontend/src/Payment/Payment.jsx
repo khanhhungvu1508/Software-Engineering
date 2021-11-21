@@ -22,11 +22,11 @@ class PaymentUI extends React.Component {
 
 
     onSubmit() {
-        if (this.state.cardNumber.length !== 16) {
+        if (this.state.cardNumber.length === 0) {
             alert("Mã số thẻ bạn nhập không hợp lệ");
             return;
         }
-        if (this.state.cvv !== 3) {
+        if (this.state.cvv === 0) {
             alert("Số cvv bạn nhập không hợp lệ");
             return;
         }
