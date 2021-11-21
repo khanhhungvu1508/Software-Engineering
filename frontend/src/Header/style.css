@@ -1,0 +1,94 @@
+#menu-screen {
+  display: flex;
+}
+
+#home-symbol {
+  min-width: 3rem;
+  height: 3rem;
+  margin-left: 3%;
+  border-radius: 1em;
+  background-color: blue;
+  color: white;
+}
+
+#content-back {
+  font-size: 1.25em;
+  margin-left: 1%;
+}
+
+#header {
+  display: flex;
+  background-color: red;
+  width: 100%;
+  height: 4em;
+  align-items: center;
+}
+
+#food-list {
+  width: 100%;
+  padding-top: 20px;
+  background: rgb(250, 251, 253);
+}
+
+#block-list {
+  max-width: 95%;
+  padding-left: 5%;
+}
+
+.MuiPaper-rounded {
+  border-radius: 4px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#content-name-food {
+  display: flex;
+}
+
+#btn-list-food {
+  display: contents;
+}
+
+#row-1-content-food{
+  border-bottom: 1px dotted #a6a6a6;
+}
+
+#food-align {
+  display: inline;
+  background: white;
+  padding-bottom: 5px;
+}
+
+#price-align {
+  display: inline;
+  float: right;
+  padding-top: 6px;
+  background: white;
+}
+
+#img-list-food-button {
+  width: 50px;
+  height: 50px;
+}
+
+#content-food {
+  margin: auto 0;
+  margin-left: 2%;
+  width: 100%;
+  margin-right: 2%;
+}
+
+#price-buy-food {
+  text-align: center;
+}
+
+#column1 {
+  width: 70%;
+}
+
+#column2 {
+  background: green;
+  width: 30%;
+  margin-bottom: -12px;
+}

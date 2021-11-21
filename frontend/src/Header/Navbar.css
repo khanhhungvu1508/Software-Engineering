@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+.navbar-item {
+    font-family: "Zilla Slab", serif;
+}
+
+.navbar-title {
+    vertical-align: middle;
+    font-family: 'Lobster', cursive;
+}
