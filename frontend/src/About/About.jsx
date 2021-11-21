@@ -5,6 +5,8 @@ import phong_image from "./Image/Phong.jpg"
 import quang_image from "./Image/Quang.jpg"
 import hung_image from "./Image/Hung.jpg"
 import {Col, Row, Container} from 'react-bootstrap';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFacebook} from "@fortawesome/free-brands-svg-icons";
 import './About.css'
 
 function Info(props) {
@@ -23,7 +25,11 @@ function Info(props) {
             <div
                 className="info-description"
             >{props.description}</div>
-            <a href={props.facebook} class="fa fa-facebook"></a>
+            <div className="about-fa-background">
+                <a href={props.facebook} className="about-fa-facebook">
+                    <FontAwesomeIcon  icon={faFacebook} />
+                </a>
+            </div>
         </div>
     );
 }
