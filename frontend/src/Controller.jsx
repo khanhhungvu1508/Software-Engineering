@@ -76,7 +76,7 @@ class Controller extends React.Component {
     isNeedToAdd(){
 		if(this.state.needToAdd){
 			this.setState({
-                needToAdd: false,
+                needToAdd: false,   
             })
 			return true;
 		}
@@ -182,9 +182,12 @@ class Controller extends React.Component {
             this.selectPage("menu");
         this.setFoodsByCategory(category);
     }
+
+    // import axios from "axios";
     
     /*Get data from server*/
     componentDidMount = () => {
+        window.scrollTo(0, 0);
         this.refreshList();
     }
 
@@ -202,7 +205,6 @@ class Controller extends React.Component {
 
     render() { 
         /*Default position on top of page*/
-        window.scrollTo(0, 0);
         return (
             <div
                 style={{background: "#FFFFFF"}}
